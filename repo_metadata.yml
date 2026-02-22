@@ -1,0 +1,7 @@
+title: "Instrumentenuitleen Preludefonds"
+client: "Cool Kunst en Cultuur"
+status: "active"
+years: [1]
+main_link: "https://instrumentenuitleen.agency.fdnd.nl/"
+dev_link: "https://instrumentenuitleen.dev.fdnd.nl/"
+tech_stack: ["SvelteKit", "SvelteKit"]
