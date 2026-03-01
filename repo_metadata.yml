@@ -4,4 +4,4 @@ status: "active"
 years: [1]
 main_link: "https://instrumentenuitleen.agency.fdnd.nl/"
 dev_link: "https://instrumentenuitleen.dev.fdnd.nl/"
-tech_stack: ["SvelteKit", "SvelteKit"]
+tech_stack: ["SvelteKit", "Directus"]
