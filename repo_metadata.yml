@@ -5,3 +5,14 @@ years: [1]
 main_link: "https://instrumentenuitleen.agency.fdnd.nl/"
 dev_link: "https://instrumentenuitleen.dev.fdnd.nl/"
 tech_stack: ["SvelteKit", "Directus"]
+team:
+  - name: 'Roxy'
+    github: 'roxyfokker'
+  - name: 'Thomas'
+    github: 'ThomasSeisveld'
+  - name: 'Kate'
+    github: '...'
+  - name: 'Kayleigh'
+    github: 'Kayleighhhhh'
+  - name: 'Julian'
+    github: 'juliandavelaar'
