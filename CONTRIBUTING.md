@@ -71,8 +71,6 @@ Aan het einde van iedere week bespreken we kort:
 Op iedere lesdag houden we een korte stand up
 
 iedereen benoemt:
-- Waar werk ik aan?
-- Wat heb ik gedaan?
+- Waar ben ik mee bezig?
 - Wat is mijn volgende stap?
 - Loop ik ergens op vast?
-- Heb ik hulp of feedback nodig?
