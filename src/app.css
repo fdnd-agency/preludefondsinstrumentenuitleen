@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Akkurat';
+    src: url('$lib/fonts/akkurat-light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akkurat';
+    src: url('$lib/fonts/akkurat-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akkurat';
+    src: url('$lib/fonts/akkurat-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    /* colors */
+    --color-primary: #46166b;
+    --color-secondary: #71cbc2;
+    --color-tertiary: #d09910;
+    --color-accent: #b195c6;
+
+    --color-positive: #64bb4b;
+    --color-caution: #f04e63;
+
+    --color-background: #fff;
+
+    --color-heading: #46166b;
+    --color-text: #212121;
+
+    /* Typography */
+    --font-primary: "Akkurat", Arial, Helvetica, sans-serif;
+
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    --font-size-h1: clamp(2rem, 4vw + 1rem, 3rem);
+    --font-size-h2: clamp(1.5rem, 3vw + 1rem, 2.25rem);
+    --font-size-h3: clamp(1.25rem, 2vw + 1rem, 1.75rem);
+    --font-size-h4: clamp(1.1rem, 1vw + 1rem, 1.25rem);
+    --font-size-h5: clamp(1rem, 0.5vw + 1rem, 1rem);
+
+    --font-size-body-xs: clamp(0.75rem, 0.25vw + 0.7rem, 0.9rem);
+    --font-size-body-sm: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+    --font-size-body-md: clamp(1rem, 0.5vw + 0.875rem, 1.25rem);
+    --font-size-body-lg: clamp(1.125rem, 1vw + 0.875rem, 1.5rem);
+    --font-size-body-2xl: clamp(3rem, 3vw + 1.5rem, 4.5rem);
+
+    --line-height-heading: 1.1;
+    --line-height-body: 1.6;
+
+    --letter-spacing-heading: -0.02em;
+    --letter-spacing-body: 0;
+    --letter-spacing-sm: 0.03em;
+    --letter-spacing-md: 0.05em;
+
+    /* spacing */
+    --space-3xs: 0.125rem;
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* scroll behavior */
+    @media(prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-body-md);
+    line-height: var(--line-height-body);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-heading);
+    color: var(--color-heading);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+}
+
+h5 {
+    font-size: var(--font-size-h5);
+}
