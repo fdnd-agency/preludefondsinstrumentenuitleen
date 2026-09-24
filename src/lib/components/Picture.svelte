@@ -3,8 +3,6 @@
     src = "https://fdnd-agency.directus.app/assets/" + src;
 </script>
 
-<p>{src}</p>
-
 <picture>
     <source
         srcset={`${src}?width=${width}&height=${height}&format=avif&quality=70`}
