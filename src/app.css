@@ -31,13 +31,36 @@
 
 html {
     /* colors */
-    --color-primary: #46166b;
-    --color-secondary: #71cbc2;
-    --color-tertiary: #d09910;
-    --color-accent: #b195c6;
+    /* Base HSL Values */
 
-    --color-positive: #64bb4b;
-    --color-caution: #f04e63;
+    /* purple */
+    --primary-h: 274;
+    --primary-s: 66%;
+
+    /* aquamarine */
+    --secondary-h: 174;
+    --secondary-s: 50%;
+
+    /* yellow */
+    --tertiary-h: 43;
+    --tertiary-s: 100%;
+
+    /* green */
+    --positive-h: 107;
+    --positive-s: 50%;
+
+    /* red */
+    --caution-h: 359;
+    --caution-s: 100%;
+
+
+    /* Ligntness variations */
+    --darkest: 15%;
+    --dark: 30%;
+    --neutral: 40%; 
+    --light: 50%;
+    --lightest: 70%;
+    --ultra-lightest: 90%;
 
     --color-background: #fff;
 
