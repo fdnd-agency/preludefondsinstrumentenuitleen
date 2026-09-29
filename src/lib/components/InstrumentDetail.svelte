@@ -137,15 +137,21 @@
         dl:first-of-type {
             @media (min-width: 660px) {
                 grid-column: 2;
+                grid-row: 2;
             }
         }
 
         dl:nth-of-type(2) {
+            @media (min-width: 660px) {
+                grid-column: 2;
+                grid-row: 3;
+            }
         }
 
         .action-buttons {
             @media (min-width: 660px) {
                 grid-column: 2;
+                grid-row: 4;
                 display: flex;
                 flex-direction: column;
                 gap: var(--space-xs) 0;
@@ -159,12 +165,14 @@
         h3 {
             @media (min-width: 660px) {
                 grid-column: 2;
+                grid-row: 5;
                 align-self: end;
             }
         }
         dl:last-of-type {
             @media (min-width: 660px) {
                 grid-column: 2;
+                grid-row: 6;
             }
         }
         .change-button {
@@ -172,6 +180,7 @@
             width: 250px;
             @media (min-width: 660px) {
                 grid-column: 2;
+                grid-row: 7;
             }
         }
         :global(picture) {
