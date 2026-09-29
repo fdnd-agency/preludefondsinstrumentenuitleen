@@ -31,6 +31,7 @@
 
 html {
     /* colors */
+    
     /* Base HSL Values */
 
     /* purple */
@@ -61,6 +62,46 @@ html {
     --light: 50%;
     --lightest: 70%;
     --ultra-lightest: 90%;
+
+    /* purple variations using HSL values */
+    --primary-darkest: hsl(var(--primary-h) var(--primary-s) var(--darkest));
+    --primary-dark: hsl(var(--primary-h) var(--primary-s) var(--dark));
+    --primary-neutral: hsl(var(--primary-h) var(--primary-s) var(--neutral));
+    --primary-light: hsl(var(--primary-h) var(--primary-s) var(--light));
+    --primary-lightest: hsl(var(--primary-h) var(--primary-s) var(--lightest));
+    --primary-ultra-lightest: hsl(var(--primary-h) var(--primary-s) var(--ultra-lightest));
+
+    /* aquamarine variations using HSL values */
+    --secondary-darkest: hsl(var(--secondary-h) var(--secondary-s) var(--darkest));
+    --secondary-dark: hsl(var(--secondary-h) var(--secondary-s) var(--dark));
+    --secondary-neutral: hsl(var(--secondary-h) var(--secondary-s) var(--neutral));
+    --secondary-light: hsl(var(--secondary-h) var(--secondary-s) var(--light));
+    --secondary-lightest: hsl(var(--secondary-h) var(--secondary-s) var(--lightest));
+    --secondary-ultra-lightest: hsl(var(--secondary-h) var(--secondary-s) var(--ultra-lightest));
+
+    /* yellow variations using HSL values */
+    --tertiary-darkest: hsl(var(--tertiary-h) var(--tertiary-s) var(--darkest));
+    --tertiary-dark: hsl(var(--tertiary-h) var(--tertiary-s) var(--dark));
+    --tertiary-neutral: hsl(var(--tertiary-h) var(--tertiary-s) var(--neutral));
+    --tertiary-light: hsl(var(--tertiary-h) var(--tertiary-s) var(--light));
+    --tertiary-lightest: hsl(var(--tertiary-h) var(--tertiary-s) var(--lightest));
+    --tertiary-ultra-lightest: hsl(var(--tertiary-h) var(--tertiary-s) var(--ultra-lightest));
+
+    /* green variations using HSL values */
+    --positive-darkest: hsl(var(--positive-h) var(--positive-s) var(--darkest));
+    --positive-dark: hsl(var(--positive-h) var(--positive-s) var(--dark));
+    --positive-neutral: hsl(var(--positive-h) var(--positive-s) var(--neutral));
+    --positive-light: hsl(var(--positive-h) var(--positive-s) var(--light));
+    --positive-lightest: hsl(var(--positive-h) var(--positive-s) var( --lightest));
+    --positive-ultra-lightest: hsl(var(--positive-h) var(--positive-s) var(--ultra-lightest));
+
+    /* red variations using HSL values */
+    --caution-darkest: hsl(var(--caution-h) var(--caution-s) var(--darkest));
+    --caution-dark: hsl(var(--caution-h) var(--caution-s) var(--dark));
+    --caution-neutral: hsl(var(--caution-h) var(--caution-s) var(--neutral));
+    --caution-light: hsl(var(--caution-h) var(--caution-s) var(--light));
+    --caution-lightest: hsl(var(--caution-h) var(--caution-s) var(--lightest));
+    --caution-ultra-lightest: hsl(var(--caution-h) var(--caution-s) var(--ultra-lightest));
 
     --color-background: #fff;
 
