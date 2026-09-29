@@ -27,3 +27,10 @@ This is how you use the picture partial
     />
 
 -->
+<style>
+    img {
+        width: 100%;
+        height: inherit;
+        object-fit: cover;
+    }
+</style>
