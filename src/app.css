@@ -126,10 +126,10 @@ html {
     --neutral-white: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-white));
 
 
-    --color-background: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-white));
+    --color-background: var(--neutral-white);
 
-    --color-heading: hsl(var(--primary-h) var(--primary-s) var(--tone-dark));
-    --color-text: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-strong));
+    --color-heading: var(--primary-dark);
+    --color-text: var(--neutral-darkest);
 
     /* Typography */
     --font-primary: "Akkurat", Arial, Helvetica, sans-serif;
