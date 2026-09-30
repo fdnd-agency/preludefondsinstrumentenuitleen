@@ -230,7 +230,7 @@ h5 {
     font-size: var(--font-size-body-md);
     font-family: var(--font-primary);
     line-height: var(--line-height-body);
-    text-align: center; 
+    text-align: center;
     height: min-content;
     width: clamp(125px, 100%, 250px);
 
@@ -254,14 +254,14 @@ h5 {
 
 .button.primary {
     background-color: var(--primary-neutral);
-    color: white;
+    color: var(--neutral-white);
 
     &:hover {
         background-color: var(--primary-light);
     }
 
     &:focus {
-        outline: var(--space-3xs) solid white;
+        outline: var(--space-3xs) solid var(--neutral-white);
     }
 }
 
@@ -282,14 +282,14 @@ h5 {
 
 .button.danger {
     background-color: var(--caution-neutral);
-    color: white;
+    color: var(--neutral-white);
 
     &:hover {
         background-color: var(--caution-light);
     }
 
     &:focus {
-        outline: var(--space-3xs) solid white;
+        outline: var(--space-3xs) solid var(--neutral-white);
 
     }
 }
