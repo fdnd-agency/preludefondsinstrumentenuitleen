@@ -117,10 +117,19 @@ html {
     --tone-faint: 90%;
     --tone-white: 100%;
 
-    --color-background: hsl(0, 0%, 100%);
+    --neutral-darkest: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-strong));
+    --neutral-dark-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-dark));
+    --neutral-mid-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-mid));
+    --neutral-soft-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-soft));
+    --neutral-light-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-light));
+    --neutral-faint-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-faint));
+    --neutral-white: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-white));
 
-    --color-heading: hsl(274, 66%, 25%);
-    --color-text: hsl(0, 0%, 13%);
+
+    --color-background: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-white));
+
+    --color-heading: hsl(var(--primary-h) var(--primary-s) var(--tone-dark));
+    --color-text: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-strong));
 
     /* Typography */
     --font-primary: "Akkurat", Arial, Helvetica, sans-serif;
