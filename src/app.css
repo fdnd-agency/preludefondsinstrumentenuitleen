@@ -31,18 +31,105 @@
 
 html {
     /* colors */
-    --color-primary: #46166b;
-    --color-secondary: #71cbc2;
-    --color-tertiary: #d09910;
-    --color-accent: #b195c6;
 
-    --color-positive: #64bb4b;
-    --color-caution: #f04e63;
+    /* Base HSL Values */
 
-    --color-background: #fff;
+    /* purple */
+    --primary-h: 274;
+    --primary-s: 66%;
 
-    --color-heading: #46166b;
-    --color-text: #212121;
+    /* aquamarine */
+    --secondary-h: 174;
+    --secondary-s: 50%;
+
+    /* yellow */
+    --tertiary-h: 43;
+    --tertiary-s: 100%;
+
+    /* green */
+    --positive-h: 107;
+    --positive-s: 50%;
+
+    /* red */
+    --caution-h: 359;
+    --caution-s: 100%;
+
+
+    /* Ligntness variations */
+    --darkest: 15%;
+    --dark: 30%;
+    --neutral: 40%; 
+    --light: 50%;
+    --lighter: 70%;
+    --lightest: 90%;
+
+    /* purple variations using HSL values */
+    --primary-darkest: hsl(var(--primary-h) var(--primary-s) var(--darkest));
+    --primary-dark: hsl(var(--primary-h) var(--primary-s) var(--dark));
+    --primary-neutral: hsl(var(--primary-h) var(--primary-s) var(--neutral));
+    --primary-light: hsl(var(--primary-h) var(--primary-s) var(--light));
+    --primary-lighter: hsl(var(--primary-h) var(--primary-s) var(--lighter));
+    --primary-lightest: hsl(var(--primary-h) var(--primary-s) var(--lightest));
+
+    /* aquamarine variations using HSL values */
+    --secondary-darkest: hsl(var(--secondary-h) var(--secondary-s) var(--darkest));
+    --secondary-dark: hsl(var(--secondary-h) var(--secondary-s) var(--dark));
+    --secondary-neutral: hsl(var(--secondary-h) var(--secondary-s) var(--neutral));
+    --secondary-light: hsl(var(--secondary-h) var(--secondary-s) var(--light));
+    --secondary-lighter: hsl(var(--secondary-h) var(--secondary-s) var(--lighter));
+    --secondary-lightest: hsl(var(--secondary-h) var(--secondary-s) var(--lightest));
+
+    /* yellow variations using HSL values */
+    --tertiary-darkest: hsl(var(--tertiary-h) var(--tertiary-s) var(--darkest));
+    --tertiary-dark: hsl(var(--tertiary-h) var(--tertiary-s) var(--dark));
+    --tertiary-neutral: hsl(var(--tertiary-h) var(--tertiary-s) var(--neutral));
+    --tertiary-light: hsl(var(--tertiary-h) var(--tertiary-s) var(--light));
+    --tertiary-lighter: hsl(var(--tertiary-h) var(--tertiary-s) var(--lighter));
+    --tertiary-lightest: hsl(var(--tertiary-h) var(--tertiary-s) var(--lightest));
+
+    /* green variations using HSL values */
+    --positive-darkest: hsl(var(--positive-h) var(--positive-s) var(--darkest));
+    --positive-dark: hsl(var(--positive-h) var(--positive-s) var(--dark));
+    --positive-neutral: hsl(var(--positive-h) var(--positive-s) var(--neutral));
+    --positive-light: hsl(var(--positive-h) var(--positive-s) var(--light));
+    --positive-lighter: hsl(var(--positive-h) var(--positive-s) var( --lighter));
+    --positive-lightest: hsl(var(--positive-h) var(--positive-s) var(--lightest));
+
+    /* red variations using HSL values */
+    --caution-darkest: hsl(var(--caution-h) var(--caution-s) var(--darkest));
+    --caution-dark: hsl(var(--caution-h) var(--caution-s) var(--dark));
+    --caution-neutral: hsl(var(--caution-h) var(--caution-s) var(--neutral));
+    --caution-light: hsl(var(--caution-h) var(--caution-s) var(--light));
+    --caution-lighter: hsl(var(--caution-h) var(--caution-s) var(--lighter));
+    --caution-lightest: hsl(var(--caution-h) var(--caution-s) var(--lightest));
+
+
+    /* neutral colors */
+    --color-neutral-scale-h: 0;
+    --color-neutral-scale-s: 0%;
+
+   /* Grayscale variations */
+    --tone-strong: 10%;
+    --tone-dark: 25%;
+    --tone-mid: 40%;
+    --tone-soft: 60%;
+    --tone-light: 75%;
+    --tone-faint: 90%;
+    --tone-white: 100%;
+
+    --neutral-darkest: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-strong));
+    --neutral-dark-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-dark));
+    --neutral-mid-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-mid));
+    --neutral-soft-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-soft));
+    --neutral-light-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-light));
+    --neutral-faint-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-faint));
+    --neutral-white: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-white));
+
+
+    --color-background: var(--neutral-white);
+
+    --color-heading: var(--primary-dark);
+    --color-text: var(--neutral-darkest);
 
     /* Typography */
     --font-primary: "Akkurat", Arial, Helvetica, sans-serif;
