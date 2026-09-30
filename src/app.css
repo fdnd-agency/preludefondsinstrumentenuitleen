@@ -225,12 +225,18 @@ h5 {
     display: flex;
     place-content: center;
     padding: var(--space-sm) var(--space-lg);
-    transition: .3s ease;
     border-radius: var(--space-xs);
     font-weight: var(--font-weight-bold);
     font-size: var(--font-size-body-md);
     font-family: var(--font-primary);
     line-height: var(--line-height-body);
+    text-align: center; 
+    height: min-content;
+    width: clamp(125px, 100%, 250px);
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: .3s ease;
+    }
 
     &:hover {
         scale: 1.05;
@@ -257,7 +263,6 @@ h5 {
     &:focus {
         outline: var(--space-3xs) solid white;
     }
-
 }
 
 .button.secondary {
@@ -273,7 +278,6 @@ h5 {
         outline: var(--space-3xs) solid var(--primary-neutral);
 
     }
-
 }
 
 .button.danger {
@@ -288,5 +292,4 @@ h5 {
         outline: var(--space-3xs) solid white;
 
     }
-
 }
