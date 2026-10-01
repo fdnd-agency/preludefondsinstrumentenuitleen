@@ -72,7 +72,7 @@
     <a href="#" class="button secondary">Aanpassen</a>
 
     <Picture
-        src={instrument.photo}
+        src={instrument.photo.id}
         width="450"
         height="450"
         alt={instrument.name}
