@@ -42,8 +42,8 @@
     </dl>
 
     <div class="action-buttons">
-        <a href="#">Terug nemen</a>
-        <a href="#">Schade melden</a>
+        <a href="#" class="button primary">Terug nemen</a>
+        <a href="#" class="button danger">Schade melden</a>
     </div>
 
     <h3>Details</h3>
@@ -69,7 +69,7 @@
         </div>
     </dl>
 
-    <a href="#" class="change-button">Aanpassen</a>
+    <a href="#" class="button secondary">Aanpassen</a>
 
     <Picture
         src={instrument.photo}
@@ -157,7 +157,6 @@
                 gap: var(--space-xs) 0;
             }
             a {
-                background-color: var(--color-primary);
                 width: 250px;
             }
         }
@@ -175,8 +174,8 @@
                 grid-row: 6;
             }
         }
-        .change-button {
-            background-color: var(--color-primary);
+        .button.secondary {
+        
             width: 250px;
             @media (min-width: 660px) {
                 grid-column: 2;
@@ -193,4 +192,8 @@
             }
         }
     }
+
+
+
+    
 </style>
