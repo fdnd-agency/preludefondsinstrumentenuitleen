@@ -89,14 +89,14 @@
     }
 
     .uitgeleend {
-        color: var(--color-caution);
+        color: var(--caution-neutral);
     }
-    .in-repartie {
-        color: var(--color-caution);
+    .in-reparatie {
+        color: var(--tertiary-dark);
     }
 
     .beschikbaar {
-        color: var(--color-positive);
+        color: var(--positive-neutral);
     }
 
     section {
@@ -130,8 +130,6 @@
             dt {
                 font-weight: bold;
             }
-            dd {
-            }
         }
 
         dl:first-of-type {
@@ -149,15 +147,19 @@
         }
 
         .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs) 0;
+
             @media (min-width: 660px) {
                 grid-column: 2;
                 grid-row: 4;
-                display: flex;
-                flex-direction: column;
-                gap: var(--space-xs) 0;
             }
             a {
-                width: 250px;
+                width: 100%;
+                @media (min-width: 660px) {
+                    width: 250px;
+                }
             }
         }
 
@@ -175,9 +177,9 @@
             }
         }
         .button.secondary {
-        
-            width: 250px;
+            width: 100%;
             @media (min-width: 660px) {
+                width: 250px;
                 grid-column: 2;
                 grid-row: 7;
             }
@@ -193,7 +195,10 @@
         }
     }
 
-
-
-    
+    /*V Check if this works when the styleguide updates  V*/
+    .button:hover {
+        @media (max-width: 660px) {
+            scale: none !important;
+        }
+    }
 </style>
