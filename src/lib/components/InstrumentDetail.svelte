@@ -194,11 +194,10 @@
             }
         }
     }
-
-    /*V Check if this works when the styleguide updates  V*/
-    .button:hover {
+    
+    .button:hover, .button:focus {
         @media (max-width: 660px) {
-            scale: none !important;
+            scale: none;
         }
     }
 </style>
