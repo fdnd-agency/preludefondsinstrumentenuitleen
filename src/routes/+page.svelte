@@ -66,3 +66,54 @@
     </section>
 </main>
 
+<style>
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    }
+
+    thead {
+    background-color: var(--primary-lighter);
+    }
+
+    th {
+        padding: 1rem;
+        font-family: var(--font-primary);
+        text-align: center;
+    }
+    .status{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .available{
+        border: 1px solid var(--positive-neutral);
+        background-color: var(--positive-lightest);
+    }
+    .on-loan{
+        border: 1px solid var(--caution-neutral);
+        background-color: var(--caution-lightest);
+    }
+    .repair{
+        border: 1px solid var(--tertiary-neutral);
+        background-color: var(--tertiary-lightest);
+    }
+    .unknown{
+        border: 1px solid var(--neutral-mid-grey);
+        background-color: var(--neutral-faint-grey);
+    }
+    td{
+        font-family: var(--font-primary);
+        font-size: var(--font-size-body-sm);
+        padding: 20px;
+        border: 2px solid var(--primary-lighter);
+        background-color: color-mix(in hsl, var(--primary-lightest) 40%, transparent);
+    }
+</style>
