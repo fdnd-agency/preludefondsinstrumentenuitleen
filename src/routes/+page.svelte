@@ -1,7 +1,7 @@
 <script>
-    import checkIcon from '/src/lib/assets/check-circle.svg';
-    import notDisturnIcon from '/src/lib/assets/do_not_disturb_on.svg';
-    import alertIcon from '/src/lib/assets/alert-triangle.svg';
+    import checkIcon from '$lib/assets/check-circle.svg';
+    import notDisturnIcon from '$lib/assets/do_not_disturb_on.svg';
+    import alertIcon from '$lib/assets/alert-triangle.svg';
 
     let { data } = $props();
     const instruments = $derived(data.instruments);
@@ -22,7 +22,7 @@
             {#each instruments as item} 
             <tr>
                 <td>
-                        {#if item.status === 'Beschikbaar'}
+                    {#if item.status === 'Beschikbaar'}
                             <div class="status available">
                             <img src="{checkIcon}" alt="">
                                 {item.status}
@@ -43,21 +43,15 @@
                             </div>
                         {/if}
                 </td>
-                <td>{item.instrument}</td>
                 <td>
-                    {#if item.brand === null}
-                        <em>Niet beschikbaar</em> 
-                    {:else}
-                        {item.brand}
-                    {/if}
+                    { item.instrument}
+                </td>
+                <td>
+                    { item.brand ?? 'onbekend'}
                 </td>
 
                 <td>
-                    {#if item.property === null}
-                        <em>Niet beschikbaar</em> 
-                    {:else}
-                        {item.property}
-                    {/if}
+                    { item.property ?? 'onbekend'}
                 </td>
             </tr>
             {/each}
@@ -82,16 +76,18 @@
     }
 
     th {
-        padding: 1rem;
+        padding: var(--space-md);
         font-family: var(--font-primary);
         text-align: center;
+        border: var(--space-3xs) solid var(--primary-lighter);
+        border-radius: var(--space-2xs);
     }
     .status{
         display: flex;
         justify-content: space-between;
-        padding: 10px;
+        padding: var( --space-sm);
         text-align: center;
-        border-radius: 5px;
+        border-radius: var(--space-2xs);
     }
     .available{
         border: 1px solid var(--positive-neutral);
@@ -112,7 +108,7 @@
     td{
         font-family: var(--font-primary);
         font-size: var(--font-size-body-sm);
-        padding: 20px;
+        padding: var(--space-sm);
         border: 2px solid var(--primary-lighter);
         background-color: color-mix(in hsl, var(--primary-lightest) 40%, transparent);
     }
