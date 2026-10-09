@@ -74,3 +74,20 @@ iedereen benoemt:
 - Waar ben ik mee bezig?
 - Wat is mijn volgende stap?
 - Loop ik ergens op vast?
+
+### Definition of Ready
+Een issue kan opgepakt worden als dit alles erin staat:
+- User story
+- Scope
+- Designs
+- acceptance criteria
+- Features
+- Poker planning
+- MosCow labels
+
+### Definition of Done 
+Een issue kan opgepakt worden als dit alles erin staat:
+- acceptance criteria
+- Test (RAPPE)
+- Review (project board)
+- Pull Request
