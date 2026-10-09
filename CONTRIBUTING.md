@@ -30,8 +30,8 @@ issue
 Vanuit de main maken wij branches aan voor een korte taak.
 - De naam beschrijft waar je aan werkt, bijvoorbeeld:
 ```
-feature-person-card
-fix-person-image
+feature-overview-table
+fix-instrument-image
 docs-contributing
 ```
 Een branch hoort bij een duidelijk issue en blijft gericht op 1 taak of feature
@@ -48,7 +48,7 @@ type: korte beschrijving #issuenummer
 - `docs:` documentatie
 - `Refactor:` code verbeteren zonder de functionaliteit te veranderen
 - `test:` tests toevoegen of aanpassen
-- `style:`
+- `style: wat toegevoegd of veranderd aan de styling`
   
 > Iedere relevante commit verwijst naar het bijbehorende issue
 
