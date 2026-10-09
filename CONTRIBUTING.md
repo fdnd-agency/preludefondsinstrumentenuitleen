@@ -10,6 +10,7 @@
 - We volgen de FDND code conventies
 - We reviewen elkaars werk voordat het wordt gemerged
 - We ondersteunen elkaar bij onze persoonlijke leerdoelen.
+- We spreken elkaar aan als het nodig 
 - Aan het einde van iedere week reflecteren we kort op onze samenwerking 
 
 ## Workflow
