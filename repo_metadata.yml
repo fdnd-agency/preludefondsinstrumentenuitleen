@@ -3,5 +3,5 @@ client: "Cool Kunst en Cultuur"
 status: "active"
 years: [2]
 main_link: ""
-dev_link: ""
+dev_link: "https://preludefondsinstrumentenuitleen.netlify.app/"
 tech_stack: ["SvelteKit", "Directus"]
