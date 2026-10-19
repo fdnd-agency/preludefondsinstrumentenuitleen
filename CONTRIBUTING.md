@@ -37,6 +37,9 @@ docs-contributing
 ```
 Een branch hoort bij een duidelijk issue en blijft gericht op 1 taak of feature
 
+### Atomic design 
+We werken met een atomic design we hebben 3 mappen waar we de componenten in op delen. Atoms, molecules & organisme.
+
 ### `Commits`
 We volgen de FDND workflowconventies en gebruiken conventional commits.
 
