@@ -128,7 +128,7 @@
                     border-radius: var(--space-xs) var(--space-xs) 0 0;
 
                     &:focus {
-                        outline: none;
+                        outline: var(--space-2xs) solid var(--primary-lighter);
                     }
                     p::after {
                         transform: rotate(180deg);
