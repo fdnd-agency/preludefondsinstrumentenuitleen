@@ -85,6 +85,7 @@
                 h3 {
                     display: flex;
                     gap: var(--space-3xs);
+                    padding: var(--space-2xs) 0;
                     img {
                         width: 25px;
                         height: 25px;
