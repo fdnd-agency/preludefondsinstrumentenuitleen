@@ -1,10 +1,14 @@
+import { redirect } from '@sveltejs/kit';
+
 export async function load({ fetch, params }) {
     const res = await fetch(
         `https://fdnd-agency.directus.app/items/preludefonds_instruments?filter[key][_eq]=${params.instrumentKey}`
     );
     const data = await res.json();
 
-    return { instrument: data.data[0] }
+    return {
+        instrument: data.data[0],
+    }
 }
 
 export const actions = {
@@ -27,7 +31,8 @@ export const actions = {
                     instrument: id,
                     performed_by: performedBy,
                     involved_party: involvedParty,
-                    note: note
+                    note: note,
+                    type_action: "schade"
                 })
             }
         )
@@ -37,6 +42,6 @@ export const actions = {
                 message: "Er is een fout opgetreden"
             }
         }
-           redirect(303, `/details/${params.slug}?success=damage-reported`);
+        redirect(303, `/details/${params.instrumentKey}?success=damage-reported`);
     }
 }
