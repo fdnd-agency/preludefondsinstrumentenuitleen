@@ -8,7 +8,7 @@
 <section>
   <h1>Schade melden bij {instrument.name}</h1>
 
-  <DamageForm />
+  <DamageForm {instrument}/>
 </section>
 
 <style>

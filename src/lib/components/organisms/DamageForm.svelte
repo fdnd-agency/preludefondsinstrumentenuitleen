@@ -1,14 +1,31 @@
 <script>
     import TextInput from "$lib/components/molecules/TextInput.svelte";
     import TextArea from "$lib/components/molecules/TextArea.svelte";
+    let { instrument } = $props();
 </script>
 
-<form action="post">
-    <TextInput name="performed_by" label="Docent" placeholder="Naam docent"  required/>
-    <TextInput name="involved_party" label="Student" placeholder="Naam student" required />
-    <TextArea name="note" label="Omschrijf de schade" placeholder="Korte omschrijving van de schade" required />
+<form method="post" action="?/reportDamage">
+    <input type="hidden" name="id" value={instrument.id} />
+    <TextInput
+        name="performed_by"
+        label="Docent"
+        placeholder="Naam docent"
+        required
+    />
+    <TextInput
+        name="involved_party"
+        label="Student"
+        placeholder="Naam student"
+        required
+    />
+    <TextArea
+        name="note"
+        label="Omschrijf de schade"
+        placeholder="Korte omschrijving van de schade"
+        required
+    />
     <!-- Image upload -->
-    <button class="primary button">Schade melden</button>
+    <button type="submit" class="primary button">Schade melden</button>
 </form>
 
 <style>
@@ -23,8 +40,8 @@
         border: solid var(--space-3xs) var(--primary-neutral);
         border-radius: var(--space-md);
 
-        button{
-             margin: 0 auto;
+        button {
+            margin: 0 auto;
         }
     }
 </style>
