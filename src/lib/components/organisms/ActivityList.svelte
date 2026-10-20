@@ -73,6 +73,11 @@
             border-bottom: solid var(--space-3xs) var(--primary-neutral);
             margin: var(--space-2xs) 0;
             padding: var(--space-2xs) var(--space-xs);
+            transition: ease-in-out 0.25s;
+
+            &:hover {
+                background-color: var(--primary-lighter);
+            }
 
             summary {
                 user-select: none;
@@ -81,6 +86,12 @@
                 justify-content: space-between;
                 font-family: monospace;
                 align-items: center;
+                transition: ease-in-out 0.25s;
+                outline: var(--primary-neutral);
+                border-radius: var(--space-xs);
+                &:focus {
+                    outline: var(--space-2xs) solid var(--primary-lighter);
+                }
 
                 h3 {
                     display: flex;
@@ -114,9 +125,17 @@
             &:open {
                 summary {
                     border-bottom: solid var(--space-3xs) var(--primary-neutral);
+                    border-radius: var(--space-xs) var(--space-xs) 0 0;
+
+                    &:focus {
+                        outline: none;
+                    }
                     p::after {
                         transform: rotate(180deg);
                     }
+                }
+                &:hover {
+                    background-color: var(--primary-lightest);
                 }
             }
         }
