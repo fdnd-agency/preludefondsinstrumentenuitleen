@@ -58,7 +58,7 @@ html {
     /* Ligntness variations */
     --darkest: 15%;
     --dark: 30%;
-    --neutral: 40%; 
+    --neutral: 40%;
     --light: 50%;
     --lighter: 70%;
     --lightest: 90%;
@@ -92,7 +92,7 @@ html {
     --positive-dark: hsl(var(--positive-h) var(--positive-s) var(--dark));
     --positive-neutral: hsl(var(--positive-h) var(--positive-s) var(--neutral));
     --positive-light: hsl(var(--positive-h) var(--positive-s) var(--light));
-    --positive-lighter: hsl(var(--positive-h) var(--positive-s) var( --lighter));
+    --positive-lighter: hsl(var(--positive-h) var(--positive-s) var(--lighter));
     --positive-lightest: hsl(var(--positive-h) var(--positive-s) var(--lightest));
 
     /* red variations using HSL values */
@@ -108,7 +108,7 @@ html {
     --color-neutral-scale-h: 0;
     --color-neutral-scale-s: 0%;
 
-   /* Grayscale variations */
+    /* Grayscale variations */
     --tone-strong: 10%;
     --tone-dark: 25%;
     --tone-mid: 40%;
@@ -216,4 +216,80 @@ h4 {
 
 h5 {
     font-size: var(--font-size-h5);
+}
+
+/* Button styling */
+
+.button {
+    text-decoration: none;
+    display: flex;
+    place-content: center;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--space-xs);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-body-md);
+    font-family: var(--font-primary);
+    line-height: var(--line-height-body);
+    text-align: center;
+    height: min-content;
+    width: clamp(125px, 100%, 250px);
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: .3s ease;
+    }
+
+    &:hover {
+        scale: 1.05;
+        cursor: pointer;
+    }
+
+    &:focus {
+        scale: 1.05;
+        /* turn the variable negative */
+        outline-offset: calc(var(--space-xs) * -1);
+        border-radius: var(--space-md);
+
+    }
+}
+
+.button.primary {
+    background-color: var(--primary-neutral);
+    color: var(--neutral-white);
+
+    &:hover {
+        background-color: var(--primary-light);
+    }
+
+    &:focus {
+        outline: var(--space-3xs) solid var(--neutral-white);
+    }
+}
+
+.button.secondary {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    border: var(--primary-neutral) var(--space-3xs) solid;
+
+    &:hover {
+        background-color: var(--primary-lightest);
+    }
+
+    &:focus {
+        outline: var(--space-3xs) solid var(--primary-neutral);
+
+    }
+}
+
+.button.danger {
+    background-color: var(--caution-neutral);
+    color: var(--neutral-white);
+
+    &:hover {
+        background-color: var(--caution-light);
+    }
+
+    &:focus {
+        outline: var(--space-3xs) solid var(--neutral-white);
+
+    }
 }

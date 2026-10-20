@@ -4,7 +4,5 @@ export async function load({fetch, params}) {
     );
     const data = await res.json();
 
-    console.log(data.data[0])
-
     return { instrument: data.data[0]}
 }
