@@ -67,6 +67,10 @@
             margin-inline: auto;
         }
 
+        h2 {
+            padding: var(--space-md) 0;
+        }
+
         details {
             background-color: var(--primary-lightest);
             border-radius: var(--space-xs);
