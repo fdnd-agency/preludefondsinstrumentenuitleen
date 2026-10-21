@@ -59,6 +59,7 @@
 <nav aria-label="Instrumentfilters">
   <!-- Mobile screen -->
   <div class="filters-mobile">
+    <label class="sr-only" for="instrument">Instrumenten</label>
     <select id="instrument" name="instrument">
       <option>Alle instrumenten</option>
 
@@ -71,6 +72,7 @@
       {/each}
     </select>
 
+    <label class="sr-only" for="status-filter">Status</label>
     <select id="status-filter" bind:value={selectedStatus}>
       <option value="">Status</option>
 
@@ -87,7 +89,7 @@
       <div class="info-filter">
         {#each instrumentGroups as group}
           <section>
-            <h3>group.name</h3>
+            <h3>{group.name}</h3>
             <ul>
               {#each group.instruments as instrument}
                 <li>{instrument}</li>
@@ -138,6 +140,17 @@
     .filter-desktop {
       display: block;
     }
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
   }
 
   select {
