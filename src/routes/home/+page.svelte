@@ -40,6 +40,11 @@
 </main>
 
 <style>
+    main{
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+
 	.container {
 		background-color: var(--primary-lighter);
 		color: var(--neutral-white);
@@ -73,7 +78,6 @@
 		background-color: var(--tertiary-lighter)
 	}
 
-	/* Lists layout: grid with 1 item on top, 2 on the bottom */
 	.lists {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
