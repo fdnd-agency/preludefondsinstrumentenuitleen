@@ -22,16 +22,19 @@
 		<section class="preview">
 			<h3>Instrumenten lijst preview</h3>
 			<p>Instrumenten lijst word ingeladen</p>
+            <a href="/">Bekijk alles</a>
 		</section>
 
 		<section class="damage">
 			<h3>Schade lijst</h3>
 			<p>Schade lijst word ingeladen</p>
+            <a href="">Bekijk alles</a>
 		</section>
 
 		<section class="actions">
 			<h3>Actie lijst</h3>
 			<p>Actie lijst word ingeladen</p>
+            <a href="">Bekijk alles</a>
 		</section>
 	</div>
 </main>
