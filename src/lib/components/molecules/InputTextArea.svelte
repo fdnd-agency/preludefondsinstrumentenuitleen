@@ -17,12 +17,15 @@
         textarea {
             resize: vertical;
             font-size: var(--font-size-body-lg);
+            font-family: var(--font-primary);
             padding: var(--space-sm);
             border: solid var(--space-3xs) var(--primary-neutral);
             border-radius: var(--space-md);
-            transition: ease-in-out 0.3s;
-            min-height: 300px;
-    
+            min-height: 250px;
+            @media (prefers-reduced-motion: no-preference) {
+                transition: ease-in-out 0.3s;
+            }
+
             &:focus {
                 outline-offset: calc(var(--space-xs) * -1);
                 outline: var(--space-3xs) solid var(--primary-neutral);

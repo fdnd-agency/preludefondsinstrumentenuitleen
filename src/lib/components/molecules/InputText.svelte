@@ -4,7 +4,7 @@
 
 <label>
     {label}
-    <input type="text" name={name} {placeholder} {required} />
+    <input type="text" {name} {placeholder} {required} />
 </label>
 
 <style>
@@ -18,8 +18,10 @@
             padding: var(--space-sm);
             border: solid var(--space-3xs) var(--primary-neutral);
             border-radius: var(--space-md);
-            transition: ease-in-out 0.3s;
-
+            
+            @media (prefers-reduced-motion: no-preference) {
+                transition: ease-in-out 0.3s;
+            }
             &:focus {
                 outline-offset: calc(var(--space-xs) * -1);
                 outline: var(--space-3xs) solid var(--primary-neutral);

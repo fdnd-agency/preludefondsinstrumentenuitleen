@@ -1,6 +1,6 @@
 <script>
-    import TextInput from "$lib/components/molecules/TextInput.svelte";
-    import TextArea from "$lib/components/molecules/TextArea.svelte";
+    import TextInput from "$lib/components/molecules/InputText.svelte";
+    import TextArea from "$lib/components/molecules/InputTextArea.svelte";
     let { instrument } = $props();
 </script>
 
@@ -24,7 +24,7 @@
         placeholder="Korte omschrijving van de schade"
         required
     />
-    <!-- Image upload -->
+    <!-- Image upload tba -->
     <button type="submit" class="primary button">Schade melden</button>
 </form>
 

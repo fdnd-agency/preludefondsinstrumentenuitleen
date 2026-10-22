@@ -42,7 +42,7 @@
   </dl>
 
   <div class="action-buttons">
-    <a href="#" class="button primary">Terug nemen</a>
+    <a href="#" class="button primary">Innemen</a>
     <a href="/damage/{instrument.key}" class="button danger">Schade melden</a>
   </div>
 
