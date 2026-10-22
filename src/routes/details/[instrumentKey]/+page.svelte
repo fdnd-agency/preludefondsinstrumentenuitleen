@@ -9,6 +9,5 @@
 
 <main>
     <Details {instrument} />
-
     <ActivityList {log}/>
 </main>

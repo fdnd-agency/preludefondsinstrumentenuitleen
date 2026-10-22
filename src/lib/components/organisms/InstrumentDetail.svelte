@@ -43,7 +43,7 @@
 
   <div class="action-buttons">
     <a href="#" class="button primary">Innemen</a>
-    <a href="#" class="button danger">Schade melden</a>
+    <a href="/damage/{instrument.key}" class="button danger">Schade melden</a>
   </div>
 
   <h3>Details</h3>
