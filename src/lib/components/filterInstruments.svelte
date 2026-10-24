@@ -167,7 +167,7 @@
     border: var(--space-3xs) solid var(--primary-light);
     border-radius: var(--space-xs);
     padding: var(--space-xs);
-    margin: var(--space-md);
+    margin: 0 0 var(--space-md) 0;
   }
 
   /* Tabelet and desktop screen */
@@ -186,7 +186,6 @@
     border-radius: var(--space-xs);
     padding: var(--space-xs);
     width: 95px;
-    margin-left: var(--space-xl);
 
     &:hover,
     &:active {
@@ -196,7 +195,7 @@
     }
   }
   details {
-    margin: var(--space-md);
+    margin: 0 0 var(--space-md) 0;
   }
   .info-filter {
     display: flex;
@@ -229,13 +228,13 @@
     font-size: var(--font-size-body-sm);
     background: none;
     border: none;
+    transition: 0.5s;
+    padding: 3px;
+    border-radius: 2px;
 
     &:hover {
       background-color: var(--primary-dark);
       color: var(--neutral-white);
-      padding: 3px;
-      transition: 0.5s;
-      border-radius: 2px;
       cursor: pointer;
     }
 

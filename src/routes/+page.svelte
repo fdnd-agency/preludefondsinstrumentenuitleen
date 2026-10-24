@@ -19,73 +19,76 @@
   const instruments = $derived(data.instruments);
 </script>
 
-<header>
-  <Filters bind:selectedStatus />
-</header>
+<div class="page">
+  <header>
+    <Filters bind:selectedStatus />
+  </header>
 
-<main>
-  <section class="table-instrument">
-    <table>
-      <thead>
-        <tr>
-          <th scope="col">Status</th>
-          <th scope="col">Instrument</th>
-          <th scope="col">Merk</th>
-          <th scope="col">Eigendom van</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {#each filteredInstrument as item}
+  <main>
+    <section class="table-instrument">
+      <table>
+        <thead>
           <tr>
-            <td>
-              {#if item.status === "Beschikbaar"}
-                <div class="status available">
-                  <img src={checkIcon} alt="" />
-                  {item.status}
-                </div>
-              {:else if item.status === "Uitgeleend"}
-                <div class="status on-loan">
-                  <img src={notDisturnIcon} alt="" />
-                  {item.status}
-                </div>
-              {:else if item.status === "In Reperatie"}
-                <div class="status repair">
-                  <img src={alertIcon} alt="" />
-                  {item.status}
-                </div>
-              {:else}
-                <div class="status unknown">
-                  <em>Niet beschikbaar</em>
-                </div>
-              {/if}
-            </td>
-            <td>
-              <a href="/details/{item.key}">
-                {item.instrument ?? "onbekend"}
-              </a>
-            </td>
-
-            <td>
-              {item.brand ?? "onbekend"}
-            </td>
-
-            <td>
-              {item.property ?? "onbekend"}
-            </td>
+            <th scope="col">Status</th>
+            <th scope="col">Instrument</th>
+            <th scope="col">Merk</th>
+            <th scope="col">Eigendom van</th>
           </tr>
-        {/each}
-      </tbody>
-    </table>
-  </section>
-</main>
+        </thead>
+
+        <tbody>
+          {#each filteredInstrument as item}
+            <tr>
+              <td>
+                {#if item.status === "Beschikbaar"}
+                  <div class="status available">
+                    <img src={checkIcon} alt="" />
+                    {item.status}
+                  </div>
+                {:else if item.status === "Uitgeleend"}
+                  <div class="status on-loan">
+                    <img src={notDisturnIcon} alt="" />
+                    {item.status}
+                  </div>
+                {:else if item.status === "In Reperatie"}
+                  <div class="status repair">
+                    <img src={alertIcon} alt="" />
+                    {item.status}
+                  </div>
+                {:else}
+                  <div class="status unknown">
+                    <em>Niet beschikbaar</em>
+                  </div>
+                {/if}
+              </td>
+              <td>
+                <a href="/details/{item.key}">
+                  {item.instrument ?? "onbekend"}
+                </a>
+              </td>
+
+              <td>
+                {item.brand ?? "onbekend"}
+              </td>
+
+              <td>
+                {item.property ?? "onbekend"}
+              </td>
+            </tr>
+          {/each}
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
 
 <style>
   /* Overview */
-  main {
+  .page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    margin: 20px;
   }
   table {
     width: 100%;
