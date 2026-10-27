@@ -40,18 +40,20 @@
                     })}
                 </p>
             </summary>
-            <dl>
-                <div>
-                    <dt>Docent:</dt>
-                    <dd>{event.performed_by ?? "Prelude"}</dd>
-                </div>
-                <div>
-                    <dt>Student:</dt>
-                    <dd>{event.involved_party ?? "Onbekend"}</dd>
-                </div>
-                <dt>details:</dt>
-                <dd>{event.note ?? "Geen details"}</dd>
-            </dl>
+            <div class="details-content">
+                <dl>
+                    <div>
+                        <dt>Docent:</dt>
+                        <dd>{event.performed_by ?? "Prelude"}</dd>
+                    </div>
+                    <div>
+                        <dt>Student:</dt>
+                        <dd>{event.involved_party ?? "Onbekend"}</dd>
+                    </div>
+                    <dt>details:</dt>
+                    <dd>{event.note ?? "Geen details"}</dd>
+                </dl>
+            </div>
         </details>
     {/each}
 </section>
@@ -61,6 +63,9 @@
         margin: 0 var(--space-xs);
         display: flex;
         flex-direction: column;
+        @supports (interpolate-size: allow-keywords) {
+            interpolate-size: allow-keywords;
+        }
 
         @media (min-width: 660px) {
             max-width: clamp(550px, 95%, 1200px);
@@ -77,10 +82,35 @@
             border-bottom: solid var(--space-3xs) var(--primary-neutral);
             margin: var(--space-2xs) 0;
             padding: var(--space-2xs) var(--space-xs);
-            transition: ease-in-out 0.25s;
+            @media (prefers-reduced-motion: no-preference) {
+                transition: ease-in-out 0.25s;
+            }
 
             &:hover {
                 background-color: var(--primary-lighter);
+            }
+
+            &::details-content {
+                @supports not (interpolate-size: allow-keywords) {
+                    display: grid;
+                    grid-template-rows: 0fr;
+                    @media (prefers-reduced-motion: no-preference) {
+                        transition:
+                            grid-template-rows 0.3s ease-in-out,
+                            content-visibility 0.3s allow-discrete;
+                    }
+                }
+
+                @supports (interpolate-size: allow-keywords) {
+                    height: 0;
+                    overflow: clip;
+
+                    @media (prefers-reduced-motion: no-preference) {
+                        transition:
+                            height 0.3s ease-in-out,
+                            content-visibility 0.3s allow-discrete;
+                    }
+                }
             }
 
             summary {
@@ -127,6 +157,17 @@
             }
 
             &:open {
+                &:hover {
+                    background-color: var(--primary-lightest);
+                }
+                &::details-content {
+                    @supports not (interpolate-size: allow-keywords) {
+                        grid-template-rows: 1fr;
+                    }
+                    @supports (interpolate-size: allow-keywords) {
+                        height: auto;
+                    }
+                }
                 summary {
                     border-bottom: solid var(--space-3xs) var(--primary-neutral);
                     border-radius: var(--space-xs) var(--space-xs) 0 0;
@@ -138,10 +179,13 @@
                         transform: rotate(180deg);
                     }
                 }
-                &:hover {
-                    background-color: var(--primary-lightest);
-                }
             }
+        }
+    }
+    @supports not (interpolate-size: allow-keywords) {
+        .details-content {
+            min-height: 0;
+            overflow: hidden;
         }
     }
 </style>
