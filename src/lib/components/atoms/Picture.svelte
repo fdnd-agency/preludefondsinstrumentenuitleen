@@ -1,18 +1,19 @@
 <script>
     let { src, width, height, alt } = $props();
-    src = "https://fdnd-agency.directus.app/assets/" + src;
+   
+     const imgURL = "https://fdnd-agency.directus.app/assets/" + src;
 </script>
 
 <picture>
     <source
-        srcset={`${src}?width=${width}&height=${height}&format=avif&quality=70`}
+        srcset={`${imgURL}?width=${width}&height=${height}&format=avif&quality=70`}
         type="image/avif"
     />
     <source
-        srcset={`${src}?width=${width}&height=${height}&format=webp&quality=70`}
+        srcset={`${imgURL}?width=${width}&height=${height}&format=webp&quality=70`}
         type="image/webp"
     />
-    <img src={`${src}?width=${width}&height=${height}&quality=60`} {alt} />
+    <img src={`${imgURL}?width=${width}&height=${height}&quality=60`} {alt} />
 </picture>
 
 <!-- 
