@@ -18,7 +18,7 @@
             resize: vertical;
             font-size: var(--font-size-body-lg);
             font-family: var(--font-primary);
-            padding: var(--space-sm);
+            padding: var(--space-md);
             border: solid var(--space-3xs) var(--primary-neutral);
             border-radius: var(--space-md);
             min-height: 250px;

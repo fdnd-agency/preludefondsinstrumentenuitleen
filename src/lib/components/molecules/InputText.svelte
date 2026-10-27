@@ -15,7 +15,7 @@
         font-size: var(--font-size-body-lg);
         input {
             font-size: var(--font-size-body-lg);
-            padding: var(--space-sm);
+            padding: var(--space-md);
             border: solid var(--space-3xs) var(--primary-neutral);
             border-radius: var(--space-md);
             
