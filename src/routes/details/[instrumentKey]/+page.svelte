@@ -4,10 +4,12 @@
 
     let { data } = $props();
     let instrument = $derived(data.instrument);
-    let log = $derived(data.instrument.log)
+    let log = $derived(data.instrument.log);
+    let related = $derived(data.related);
 </script>
 
 <main>
     <Details {instrument} />
-    <ActivityList {log}/>
+    <ActivityList {log} />
+    { related[0].name}
 </main>
