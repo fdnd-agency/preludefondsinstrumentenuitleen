@@ -9,7 +9,7 @@
 
 <main>
   <div class="table-instrument">
-    <table class="table-mobile">
+    <table>
       <thead>
         <tr>
           <th scope="col">Status</th>
@@ -59,7 +59,7 @@
         </tr>
       </thead>
 
-      <tbody class="test">
+      <tbody>
         {#each instruments as item}
           <tr>
             <td class="border-none">
@@ -87,73 +87,84 @@
       display: table;
     }
   }
+
   main {
     display: flex;
     justify-content: center;
-
     align-items: center;
   }
+
   .table-instrument {
     display: flex;
     flex-direction: row;
     align-items: stretch;
   }
+
   table {
     border-collapse: collapse;
+
+    thead {
+      background-color: var(--primary-lighter);
+    }
+
+    th {
+      padding: var(--space-md);
+      font-family: var(--font-primary);
+      text-align: center;
+      border: var(--space-3xs) solid var(--primary-lighter);
+      border-radius: var(--space-2xs);
+    }
+
+    tr {
+      position: relative;
+    }
+
+    td {
+      font-family: var(--font-primary);
+      font-size: var(--font-size-body-sm);
+      text-align: center;
+      padding: var(--space-sm);
+      border: var(--space-3xs) solid var(--primary-lighter);
+      background-color: color-mix(
+        in hsl,
+        var(--primary-lightest) 40%,
+        transparent
+      );
+    }
   }
 
-  thead {
-    background-color: var(--primary-lighter);
-  }
-
-  th {
-    padding: var(--space-md);
-    font-family: var(--font-primary);
-    text-align: center;
-    border: var(--space-3xs) solid var(--primary-lighter);
-    border-radius: var(--space-2xs);
-  }
   .status {
     display: flex;
     justify-content: space-between;
     padding: var(--space-sm);
     text-align: center;
     border-radius: var(--space-2xs);
+
+    &.available {
+      border: 1px solid var(--positive-neutral);
+      background-color: var(--positive-lightest);
+    }
+
+    &.on-loan {
+      border: 1px solid var(--caution-neutral);
+      background-color: var(--caution-lightest);
+    }
+
+    &.repair {
+      border: 1px solid var(--tertiary-neutral);
+      background-color: var(--tertiary-lightest);
+    }
+
+    &.unknown {
+      border: 1px solid var(--neutral-mid-grey);
+      background-color: var(--neutral-faint-grey);
+    }
   }
-  .available {
-    border: 1px solid var(--positive-neutral);
-    background-color: var(--positive-lightest);
-  }
-  .on-loan {
-    border: 1px solid var(--caution-neutral);
-    background-color: var(--caution-lightest);
-  }
-  .repair {
-    border: 1px solid var(--tertiary-neutral);
-    background-color: var(--tertiary-lightest);
-  }
-  .unknown {
-    border: 1px solid var(--neutral-mid-grey);
-    background-color: var(--neutral-faint-grey);
-  }
-  tr {
-    position: relative;
-  }
-  td {
-    font-family: var(--font-primary);
-    font-size: var(--font-size-body-sm);
-    text-align: center;
-    padding: var(--space-sm);
-    border: var(--space-3xs) solid var(--primary-lighter);
-    background-color: color-mix(
-      in hsl,
-      var(--primary-lightest) 40%,
-      transparent
-    );
-  }
+
   .border-none {
     border-left: none;
   }
+
   a {
     text-decoration: none;
     color: var(--neutral-darkest);
