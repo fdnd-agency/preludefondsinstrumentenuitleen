@@ -41,10 +41,10 @@
 
 <style>
     main{
-        margin-left: 15vw;
-        margin-right: 15vw;
-		@media (max-width: 650px){
-			margin: 0;
+		margin: 0;
+		@media (min-width: 650px){
+        	margin-left: 15vw;
+        	margin-right: 15vw;
 		}
     }
 
