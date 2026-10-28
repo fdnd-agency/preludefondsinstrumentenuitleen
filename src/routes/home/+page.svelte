@@ -5,17 +5,17 @@
 
 <main class="container">
 	<div class="overview">
-		<section class="available">
+		<div class="available">
 			<span>??</span> beschikbaar
-		</section>
+		</div>
 
-		<section class="loaned">
+		<div class="loaned">
 			<span>??</span> uitgeleend
-		</section>
+		</div>
 
-		<section class="repairs">
+		<div class="repairs">
 			<span>??</span> in reparatie
-		</section>
+		</div>
 	</div>
 
 	<div class="lists">
@@ -63,7 +63,7 @@
 		margin-bottom: 2rem;
 	}
 
-	.overview section {
+	.overview div {
 		padding: 1rem 1.5rem;
 		border-radius: 0.5em;
 		text-align: center;
