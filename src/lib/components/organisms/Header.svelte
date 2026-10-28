@@ -3,7 +3,7 @@
 </script>
 
 <nav>
-    <a href="/home"><img src={logo} alt="Logo cool"></a>
+    <a href="/"><img src={logo} alt="Logo cool"></a>
 
     <a href="/home">Home</a>
     <a href="/">Instruments</a>
