@@ -20,8 +20,19 @@
         margin-bottom: var(--space-md);
         filter:drop-shadow(0 3px 1px var(--neutral-light-grey));
 
+        a{
+            text-decoration: none;
+            color: var(--primary-darkest);
+        }
+        a:hover, a:focus{
+            text-decoration: underline;
+        }
+
         img{
             max-height: 4em;
+            margin-right: var(--space-2xl);
+            margin-left: var(--space-xs);
+            margin-top: var(--space-xs);
         }
     }
 </style> 
