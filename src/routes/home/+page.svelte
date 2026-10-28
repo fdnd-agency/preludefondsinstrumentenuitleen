@@ -51,7 +51,7 @@
 	.container {
 		background-color: var(--primary-lighter);
 		color: var(--neutral-white);
-		padding: 2rem;
+		padding: var(--space-xl);
 		min-height: 100vh;
 		box-sizing: border-box;
 	}
@@ -59,12 +59,12 @@
 	.overview {
 		display: flex;
 		justify-content: center;
-		gap: 1rem;
-		margin-bottom: 2rem;
+		gap: var(--space-md);
+		margin-bottom: var(--space-xl);
 	}
 
 	.overview div {
-		padding: 1rem 1.5rem;
+		padding: var(--space-md) var(--space-lg);
 		border-radius: 0.5em;
 		text-align: center;
 	}
@@ -84,27 +84,27 @@
 	.lists {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 1.5rem;
+		gap: var(--space-lg);
 	}
 
 	.preview {
 		grid-column: 1 / -1;
 		background-color: var(--neutral-light-grey);
-		padding: 1.5rem;
+		padding: var(--space-lg);
 		border-radius: 1em;
         min-height: 15em;
 	}
 
 	.damage {
 		background-color: var(--neutral-light-grey);
-		padding: 1.5rem;
+		padding: var(--space-lg);
 		border-radius: 1em;
         min-height: 15em;
 	}
 
 	.actions {
 		background-color: var(--neutral-light-grey);
-		padding: 1.5rem;
+		padding: var(--space-lg);
 		border-radius: 1em;
         min-height: 15em;
 	}
