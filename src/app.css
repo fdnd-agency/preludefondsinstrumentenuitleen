@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Akkurat';
+    src: url('$lib/fonts/akkurat-light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akkurat';
+    src: url('$lib/fonts/akkurat-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Akkurat';
+    src: url('$lib/fonts/akkurat-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    /* colors */
+
+    /* Base HSL Values */
+
+    /* purple */
+    --primary-h: 274;
+    --primary-s: 66%;
+
+    /* aquamarine */
+    --secondary-h: 174;
+    --secondary-s: 50%;
+
+    /* yellow */
+    --tertiary-h: 43;
+    --tertiary-s: 100%;
+
+    /* green */
+    --positive-h: 107;
+    --positive-s: 50%;
+
+    /* red */
+    --caution-h: 359;
+    --caution-s: 100%;
+
+
+    /* Ligntness variations */
+    --darkest: 15%;
+    --dark: 30%;
+    --neutral: 40%;
+    --light: 50%;
+    --lighter: 70%;
+    --lightest: 90%;
+
+    /* purple variations using HSL values */
+    --primary-darkest: hsl(var(--primary-h) var(--primary-s) var(--darkest));
+    --primary-dark: hsl(var(--primary-h) var(--primary-s) var(--dark));
+    --primary-neutral: hsl(var(--primary-h) var(--primary-s) var(--neutral));
+    --primary-light: hsl(var(--primary-h) var(--primary-s) var(--light));
+    --primary-lighter: hsl(var(--primary-h) var(--primary-s) var(--lighter));
+    --primary-lightest: hsl(var(--primary-h) var(--primary-s) var(--lightest));
+
+    /* aquamarine variations using HSL values */
+    --secondary-darkest: hsl(var(--secondary-h) var(--secondary-s) var(--darkest));
+    --secondary-dark: hsl(var(--secondary-h) var(--secondary-s) var(--dark));
+    --secondary-neutral: hsl(var(--secondary-h) var(--secondary-s) var(--neutral));
+    --secondary-light: hsl(var(--secondary-h) var(--secondary-s) var(--light));
+    --secondary-lighter: hsl(var(--secondary-h) var(--secondary-s) var(--lighter));
+    --secondary-lightest: hsl(var(--secondary-h) var(--secondary-s) var(--lightest));
+
+    /* yellow variations using HSL values */
+    --tertiary-darkest: hsl(var(--tertiary-h) var(--tertiary-s) var(--darkest));
+    --tertiary-dark: hsl(var(--tertiary-h) var(--tertiary-s) var(--dark));
+    --tertiary-neutral: hsl(var(--tertiary-h) var(--tertiary-s) var(--neutral));
+    --tertiary-light: hsl(var(--tertiary-h) var(--tertiary-s) var(--light));
+    --tertiary-lighter: hsl(var(--tertiary-h) var(--tertiary-s) var(--lighter));
+    --tertiary-lightest: hsl(var(--tertiary-h) var(--tertiary-s) var(--lightest));
+
+    /* green variations using HSL values */
+    --positive-darkest: hsl(var(--positive-h) var(--positive-s) var(--darkest));
+    --positive-dark: hsl(var(--positive-h) var(--positive-s) var(--dark));
+    --positive-neutral: hsl(var(--positive-h) var(--positive-s) var(--neutral));
+    --positive-light: hsl(var(--positive-h) var(--positive-s) var(--light));
+    --positive-lighter: hsl(var(--positive-h) var(--positive-s) var(--lighter));
+    --positive-lightest: hsl(var(--positive-h) var(--positive-s) var(--lightest));
+
+    /* red variations using HSL values */
+    --caution-darkest: hsl(var(--caution-h) var(--caution-s) var(--darkest));
+    --caution-dark: hsl(var(--caution-h) var(--caution-s) var(--dark));
+    --caution-neutral: hsl(var(--caution-h) var(--caution-s) var(--neutral));
+    --caution-light: hsl(var(--caution-h) var(--caution-s) var(--light));
+    --caution-lighter: hsl(var(--caution-h) var(--caution-s) var(--lighter));
+    --caution-lightest: hsl(var(--caution-h) var(--caution-s) var(--lightest));
+
+
+    /* neutral colors */
+    --color-neutral-scale-h: 0;
+    --color-neutral-scale-s: 0%;
+
+    /* Grayscale variations */
+    --tone-strong: 10%;
+    --tone-dark: 25%;
+    --tone-mid: 40%;
+    --tone-soft: 60%;
+    --tone-light: 75%;
+    --tone-faint: 90%;
+    --tone-white: 100%;
+
+    --neutral-darkest: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-strong));
+    --neutral-dark-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-dark));
+    --neutral-mid-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-mid));
+    --neutral-soft-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-soft));
+    --neutral-light-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-light));
+    --neutral-faint-grey: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-faint));
+    --neutral-white: hsl(var(--color-neutral-scale-h) var(--color-neutral-scale-s) var(--tone-white));
+
+
+    --color-background: var(--neutral-white);
+
+    --color-heading: var(--primary-dark);
+    --color-text: var(--neutral-darkest);
+
+    /* Typography */
+    --font-primary: "Akkurat", Arial, Helvetica, sans-serif;
+
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    --font-size-h1: clamp(2rem, 4vw + 1rem, 3rem);
+    --font-size-h2: clamp(1.5rem, 3vw + 1rem, 2.25rem);
+    --font-size-h3: clamp(1.25rem, 2vw + 1rem, 1.75rem);
+    --font-size-h4: clamp(1.1rem, 1vw + 1rem, 1.25rem);
+    --font-size-h5: clamp(1rem, 0.5vw + 1rem, 1rem);
+
+    --font-size-body-xs: clamp(0.75rem, 0.25vw + 0.7rem, 0.9rem);
+    --font-size-body-sm: clamp(0.875rem, 0.5vw + 0.75rem, 1rem);
+    --font-size-body-md: clamp(1rem, 0.5vw + 0.875rem, 1.25rem);
+    --font-size-body-lg: clamp(1.125rem, 1vw + 0.875rem, 1.5rem);
+    --font-size-body-2xl: clamp(3rem, 3vw + 1.5rem, 4.5rem);
+
+    --line-height-heading: 1.1;
+    --line-height-body: 1.6;
+
+    --letter-spacing-heading: -0.02em;
+    --letter-spacing-body: 0;
+    --letter-spacing-sm: 0.03em;
+    --letter-spacing-md: 0.05em;
+
+    /* spacing */
+    --space-3xs: 0.125rem;
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* scroll behavior */
+    @media(prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-body-md);
+    line-height: var(--line-height-body);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-heading);
+    color: var(--color-heading);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+}
+
+h5 {
+    font-size: var(--font-size-h5);
+}
+
+/* Button styling */
+
+.button {
+    text-decoration: none;
+    display: flex;
+    place-content: center;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--space-xs);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-body-md);
+    font-family: var(--font-primary);
+    line-height: var(--line-height-body);
+    text-align: center;
+    height: min-content;
+    width: clamp(125px, 100%, 250px);
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: .3s ease;
+    }
+
+    &:hover {
+        scale: 1.05;
+        cursor: pointer;
+    }
+
+    &:focus {
+        scale: 1.05;
+        /* turn the variable negative */
+        outline-offset: calc(var(--space-xs) * -1);
+        border-radius: var(--space-md);
+
+    }
+}
+
+.button.primary {
+    background-color: var(--primary-neutral);
+    color: var(--neutral-white);
+
+    &:hover {
+        background-color: var(--primary-light);
+    }
+
+    &:focus {
+        outline: var(--space-3xs) solid var(--neutral-white);
+    }
+}
+
+.button.secondary {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    border: var(--primary-neutral) var(--space-3xs) solid;
+
+    &:hover {
+        background-color: var(--primary-lightest);
+    }
+
+    &:focus {
+        outline: var(--space-3xs) solid var(--primary-neutral);
+
+    }
+}
+
+.button.danger {
+    background-color: var(--caution-neutral);
+    color: var(--neutral-white);
+
+    &:hover {
+        background-color: var(--caution-light);
+    }
+
+    &:focus {
+        outline: var(--space-3xs) solid var(--neutral-white);
+
+    }
+}
