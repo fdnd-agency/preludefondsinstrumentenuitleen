@@ -15,6 +15,7 @@
         justify-content: start;
         align-items: center;
         gap: var(--space-md);
+        font-family: var(--font-primary);
         font-size: var(--font-size-body-md);
         font-weight: var(--font-weight-bold);
         background-color: var(--primary-lightest);
