@@ -18,6 +18,7 @@
         background-color: var(--primary-lightest);
         max-height: 20vh;
         margin-bottom: var(--space-md);
+        filter:drop-shadow(0 3px 1px var(--neutral-light-grey));
 
         img{
             max-height: 4em;
