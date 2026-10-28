@@ -33,7 +33,7 @@
         }
 
         img{
-            max-height: 4em;
+            max-height: var(--space-3xl);
             margin-right: var(--space-2xl);
             margin-left: var(--space-xs);
             margin-top: var(--space-xs);
