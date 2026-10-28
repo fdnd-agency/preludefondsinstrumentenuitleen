@@ -15,8 +15,11 @@
         justify-content: start;
         align-items: center;
         gap: var(--space-md);
+        font-size: var(--font-size-body-md);
+        font-weight: var(--font-weight-bold);
         background-color: var(--primary-lightest);
         max-height: 20vh;
+        width: 100vw;
         margin-bottom: var(--space-md);
         filter:drop-shadow(0 3px 1px var(--neutral-light-grey));
 
