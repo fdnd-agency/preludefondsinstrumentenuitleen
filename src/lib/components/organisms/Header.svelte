@@ -6,7 +6,7 @@
     <a href="/"><img src={logo} alt="Logo cool"></a>
 
     <a href="/home">Home</a>
-    <a href="/">Instruments</a>
+    <a href="/">Instrumenten</a>
 </nav>
 
 <style>
