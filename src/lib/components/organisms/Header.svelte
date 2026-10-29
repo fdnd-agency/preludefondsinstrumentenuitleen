@@ -34,9 +34,9 @@
 
         img{
             max-height: var(--space-3xl);
-            margin-right: var(--space-2xl);
-            margin-left: var(--space-xs);
-            margin-top: var(--space-xs);
+            padding-right: var(--space-2xl);
+            padding-left: var(--space-xs);
+            padding-top: var(--space-xs);
         }
     }
 </style> 
