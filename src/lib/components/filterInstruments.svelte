@@ -101,12 +101,14 @@
         <section>
           <h3>Status</h3>
           <ul>
-            {#each statuses as status}
+            {#each statuses as status (status)}
+              {@const isActive = selectedStatus === status}
               <li>
                 <button
                   type="button"
-                  class:active={selectedStatus === status}
-                  aria-pressed={selectedStatus === status}
+                  class="button"
+                  class:active={isActive}
+                  aria-pressed={isActive}
                   onclick={() => toggleStatus(status)}
                 >
                   {status}
@@ -125,7 +127,7 @@
   .filters-mobile {
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: var(--space-xs);
   }
 
   .filter-desktop {
@@ -170,7 +172,7 @@
     margin: 0 0 var(--space-md) 0;
   }
 
-  /* Tabelet and desktop screen */
+  /* Tablet and desktop screen */
   summary {
     font-family: var(--font-primary);
     font-weight: var(--font-weight-bold);
@@ -186,11 +188,11 @@
     border-radius: var(--space-xs);
     padding: var(--space-xs);
     width: 95px;
+    transition: 0.3s ease-out;
 
     &:hover,
     &:active {
       background-color: var(--primary-lighter);
-      transition: 0.5s ease-out;
       color: var(--neutral-darkest);
     }
   }
@@ -223,7 +225,7 @@
     font-size: var(--font-size-body-sm);
   }
 
-  button {
+  .button {
     font-family: var(--font-primary);
     font-size: var(--font-size-body-sm);
     background: none;

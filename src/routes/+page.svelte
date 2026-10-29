@@ -4,7 +4,7 @@
   import alertIcon from "$lib/assets/alert-triangle.svg";
   import arrowicon from "$lib/assets/arrow.svg";
 
-  import Filters from "$lib/components/filterInstruments.svelte";
+  import Filters from "$lib/components/FilterInstruments.svelte";
 
   let { data } = $props();
 
