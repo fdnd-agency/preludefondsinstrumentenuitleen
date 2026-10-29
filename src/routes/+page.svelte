@@ -80,10 +80,19 @@
 </main>
 
 <style>
+  .table-instrument {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    container-type: inline-size;
+  }
   .table-desktop {
     display: none;
 
-    @media (min-width: 768px) {
+    @container (min-width: 768px) {
       display: table;
     }
   }
@@ -92,12 +101,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .table-instrument {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    width: 100%;
   }
 
   table {
