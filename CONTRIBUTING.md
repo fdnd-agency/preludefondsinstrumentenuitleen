@@ -1,6 +1,7 @@
 ## Teamafspraken 
 
-- Elke lesdag houden we een korte standup
+- Elke dag houden we een korte standup
+- Elke dag houden we een korte sitdown (Wat heb je die dag af kunnen krijgen)
 - Taken en voortgang houden we bij in het projectboard
 - Iedere taak heeft een duidelijke hoofdverantwoordelijke
 - We starten taken aan de hand van issues
@@ -11,7 +12,8 @@
 - We reviewen elkaars werk voordat het wordt gemerged
 - We ondersteunen elkaar bij onze persoonlijke leerdoelen.
 - We spreken elkaar aan als het nodig 
-- Aan het einde van iedere week reflecteren we kort op onze samenwerking 
+- Aan het einde van iedere week reflecteren we kort op onze samenwerking
+- de scrum leader geeft elke week aan wat aan het eind van de week af moet 
 
 ## Workflow
 We werken vanuit kleine en duidelijke issues (proces en doel moet navolgbaar zijn)
