@@ -13,9 +13,13 @@
   {#if instrument.status === "Uitgeleend"}
     <dl>
       <div>
-        <dt>Uitgeleend tot:</dt>
+        <dt>Uitgeleend sinds:</dt>
         <dd>
-          {instrument.rented_until ?? "Niet bekend"}
+          {new Date(instrument.rented_from).toLocaleDateString("nl-NL", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+          })}
         </dd>
       </div>
       <div>

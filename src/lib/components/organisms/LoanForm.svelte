@@ -22,7 +22,7 @@
         name="note"
         label="Notitie"
         placeholder="Notitie over uitlenen"
-        required
+        
     />
     <button type="submit" class="primary button">Uitlenen</button>
 </form>
