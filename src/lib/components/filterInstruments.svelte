@@ -60,7 +60,7 @@
   <!-- Mobile screen -->
   <div class="filters-mobile">
     <label class="sr-only" for="instrument">Instrumenten</label>
-    <select id="instrument" name="instrument">
+    <select id="instrument" name="instrument" class="button secondary">
       <option>Alle instrumenten</option>
 
       {#each instrumentGroups as group}
@@ -73,7 +73,11 @@
     </select>
 
     <label class="sr-only" for="status-filter">Status</label>
-    <select id="status-filter" bind:value={selectedStatus}>
+    <select
+      id="status-filter"
+      bind:value={selectedStatus}
+      class="button secondary"
+    >
       <option value="">Status</option>
 
       {#each statuses as status}
@@ -85,7 +89,7 @@
   <!-- Tablet and desktop screen -->
   <div class="filter-desktop">
     <details>
-      <summary>Filters</summary>
+      <summary class="button secondary">Filters</summary>
       <div class="info-filter">
         {#each instrumentGroups as group}
           <section>
@@ -106,7 +110,7 @@
               <li>
                 <button
                   type="button"
-                  class="button"
+                  class="status-button"
                   class:active={isActive}
                   aria-pressed={isActive}
                   onclick={() => toggleStatus(status)}
@@ -135,7 +139,7 @@
   }
 
   /* Tablet and Desktop screen 768px */
-  @media (min-width: 768px) {
+  @media (min-width: 489px) {
     .filters-mobile {
       display: none;
     }
@@ -145,8 +149,8 @@
   }
   .sr-only {
     position: absolute;
-    width: 1px;
-    height: 1px;
+    width: var(--space-3xs);
+    height: var(--space-3xs);
     padding: 0;
     margin: -1px;
     overflow: hidden;
@@ -156,46 +160,15 @@
   }
 
   select {
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-bold);
-    text-align: center;
-    background: none;
-    background-color: color-mix(
-      in hsl,
-      var(--primary-lightest) 40%,
-      transparent
-    );
-    color: var(--primary-dark);
-    border: var(--space-3xs) solid var(--primary-light);
-    border-radius: var(--space-xs);
-    padding: var(--space-xs);
-    margin: 0 0 var(--space-md) 0;
+    width: fit-content;
+    margin-bottom: var(--space-xs);
   }
 
   /* Tablet and desktop screen */
   summary {
-    font-family: var(--font-primary);
-    font-weight: var(--font-weight-bold);
-    text-align: center;
-    background: none;
-    background-color: color-mix(
-      in hsl,
-      var(--primary-lightest) 40%,
-      transparent
-    );
-    color: var(--primary-dark);
-    border: var(--space-3xs) solid var(--primary-light);
-    border-radius: var(--space-xs);
-    padding: var(--space-xs);
-    width: 95px;
-    transition: 0.3s ease-out;
-
-    &:hover,
-    &:active {
-      background-color: var(--primary-lighter);
-      color: var(--neutral-darkest);
-    }
+    width: 100px;
   }
+
   details {
     margin: 0 0 var(--space-md) 0;
   }
@@ -225,7 +198,7 @@
     font-size: var(--font-size-body-sm);
   }
 
-  .button {
+  .status-button {
     font-family: var(--font-primary);
     font-size: var(--font-size-body-sm);
     background: none;
