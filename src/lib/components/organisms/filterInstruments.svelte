@@ -138,7 +138,7 @@
     display: none;
   }
 
-  /* Tablet and Desktop screen 768px */
+  /* Tablet and Desktop */
   @media (min-width: 489px) {
     .filters-mobile {
       display: none;
