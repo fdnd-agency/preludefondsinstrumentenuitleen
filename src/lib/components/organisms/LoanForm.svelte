@@ -22,7 +22,6 @@
         name="note"
         label="Notitie"
         placeholder="Notitie over uitlenen"
-        
     />
     <button type="submit" class="primary button">Uitlenen</button>
 </form>
