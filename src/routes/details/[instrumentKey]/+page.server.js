@@ -4,8 +4,15 @@ export async function load({ fetch, params, url }) {
     );
     const data = await res.json();
 
+    const res2 = await fetch(
+        `https://fdnd-agency.directus.app/items/preludefonds_instruments?filter%5Binstrument%5D%5B_eq%5D=${data.data[0].instrument}&fields=status,key,name,photo,instrument`
+    )
+
+    const relatedInstruments = await res2.json();
+
     return {
         instrument: data.data[0],
+        related: relatedInstruments.data,
         success: url.searchParams.get('success')
 
     }
