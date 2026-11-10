@@ -1,7 +1,6 @@
 <script>
     import Picture from "$lib/components/atoms/Picture.svelte";
     let { related } = $props();
-
 </script>
 
 <a href="/details/{related.key}">
@@ -30,9 +29,8 @@
             text-decoration: underline;
         }
 
-        &:focus {
+        &:focus-visible {
             outline: var(--space-2xs) solid var(--primary-neutral);
-           
         }
 
         p {
