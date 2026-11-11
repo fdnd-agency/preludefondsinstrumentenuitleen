@@ -14,6 +14,7 @@
         grid-template-columns: min-content 1fr;
         font-weight: var(--font-weight-bold);
         font-size: var(--font-size-body-lg);
+        text-wrap: nowrap;
 
         &:has(textarea:user-invalid) span::after {
             color: var(--caution-neutral);
