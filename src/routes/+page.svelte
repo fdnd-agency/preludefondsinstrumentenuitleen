@@ -1,22 +1,16 @@
 <script>
-  import checkIcon from "$lib/assets/check-circle.svg";
-  import notDisturnIcon from "$lib/assets/do_not_disturb_on.svg";
-  import alertIcon from "$lib/assets/alert-triangle.svg";
-  import arrowicon from "$lib/assets/arrow.svg";
-
-  import Filters from "$lib/components/organisms/filterInstruments.svelte";
+  import Filters from "$lib/components/organisms/FilterInstruments.svelte";
+  import InstrumentTable from "$lib/components/organisms/InstrumentTable.svelte";
 
   let { data } = $props();
 
   let selectedStatus = $state("");
 
-  const filteredInstrument = $derived(
+  const filteredInstruments = $derived(
     data.instruments.filter(
-      (instrument) =>
-        selectedStatus === "" || instrument.status === selectedStatus,
+      ({ status }) => selectedStatus === "" || status === selectedStatus,
     ),
   );
-  const instruments = $derived(data.instruments);
 </script>
 
 <header>
@@ -24,143 +18,13 @@
 </header>
 
 <main>
-  <div class="table-instrument">
-    <table>
-      <thead>
-        <tr>
-          <th scope="col">Status</th>
-          <th scope="col">Instrument</th>
-          <th scope="col">Merk</th>
-          <th scope="col">Eigendom van</th>
-          <th scope="col">Details</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {#each instruments as item}
-          <tr>
-            <td>
-              {#if item.status === "Beschikbaar"}
-                <div class="status available">
-                  <img src={checkIcon} alt="" />
-                  {item.status}
-                </div>
-              {:else if item.status === "Uitgeleend"}
-                <div class="status on-loan">
-                  <img src={notDisturnIcon} alt="" />
-                  {item.status}
-                </div>
-              {:else if item.status === "In Reperatie"}
-                <div class="status repair">
-                  <img src={alertIcon} alt="" />
-                  {item.status}
-                </div>
-              {:else}
-                <div class="status unknown">
-                  <em>Niet beschikbaar</em>
-                </div>
-              {/if}
-            </td>
-            <td>{item.instrument ?? "onbekend"}</td>
-            <td>{item.brand ?? "onbekend"}</td>
-            <td>{item.property ?? "onbekend"}</td>
-            <td><a href="/details/{item.key}">Bekijk</a></td>
-          </tr>
-        {/each}
-      </tbody>
-    </table>
-  </div>
+  <InstrumentTable instruments={filteredInstruments} />
 </main>
 
 <style>
-  .table-instrument {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-    width: 100%;
-    max-width: 100%;
-    container-type: inline-size;
-  }
-
   main {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  table {
-    border-collapse: collapse;
-
-    thead {
-      background-color: var(--primary-lighter);
-    }
-
-    th {
-      padding: var(--space-md);
-      font-family: var(--font-primary);
-      text-align: center;
-      border: var(--space-3xs) solid var(--primary-lighter);
-    }
-    th:nth-of-type(n + 3),
-    td:nth-of-type(n + 3) {
-      display: none;
-    }
-    @container (min-width: 690px) {
-      th:nth-of-type(n + 3),
-      td:nth-of-type(n + 3) {
-        display: table-cell;
-      }
-    }
-
-    tr {
-      position: relative;
-    }
-
-    td {
-      font-family: var(--font-primary);
-      font-size: var(--font-size-body-sm);
-      text-align: center;
-      padding: var(--space-sm);
-      border: var(--space-3xs) solid var(--primary-lighter);
-      background-color: color-mix(
-        in hsl,
-        var(--primary-lightest) 40%,
-        transparent
-      );
-    }
-  }
-
-  .status {
-    display: flex;
-    justify-content: space-between;
-    padding: var(--space-sm);
-    text-align: center;
-    border-radius: var(--space-2xs);
-
-    &.available {
-      border: 1px solid var(--positive-neutral);
-      background-color: var(--positive-lightest);
-    }
-
-    &.on-loan {
-      border: 1px solid var(--caution-neutral);
-      background-color: var(--caution-lightest);
-    }
-
-    &.repair {
-      border: 1px solid var(--tertiary-neutral);
-      background-color: var(--tertiary-lightest);
-    }
-
-    &.unknown {
-      border: 1px solid var(--neutral-mid-grey);
-      background-color: var(--neutral-faint-grey);
-    }
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--neutral-darkest);
   }
 </style>
