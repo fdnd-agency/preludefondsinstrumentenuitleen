@@ -1,5 +1,5 @@
 <script>
-  import LoanOutForm from "$lib/components/organisms/LoanForm.svelte";
+  import LoanForm from "$lib/components/organisms/LoanForm.svelte";
 
   let { data } = $props();
   let instrument = $derived(data.instrument);
@@ -8,7 +8,7 @@
 <section>
   <h1>{instrument.name} uitlenen</h1>
 
-  <LoanOutForm {instrument}/>
+  <LoanForm {instrument} action="loanOut" />
 </section>
 
 <style>
