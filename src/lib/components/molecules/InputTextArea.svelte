@@ -1,11 +1,11 @@
 <script>
-    let { name, label, placeholder, required, value, readonly } = $props();
+    let { name, label, placeholder, required, value, readonly, disabled } = $props();
 </script>
 
 <label>
     {label}
     {#if required}<span>* </span>{/if}
-    <textarea {name} {placeholder} {required} {value} {readonly}></textarea>
+    <textarea {name} {placeholder} {required} {value} {readonly} {disabled}></textarea>
 </label>
 
 <style>

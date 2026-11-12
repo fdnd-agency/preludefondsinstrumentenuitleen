@@ -1,11 +1,11 @@
 <script>
-    let { name, label, placeholder, required, value, readonly } = $props();
+    let { name, label, placeholder, required, value, readonly, disabled } = $props();
 </script>
 
 <label>
     {label}
     {#if required}<span>* </span>{/if}
-    <input type="text" {name} {placeholder} {required} {value} {readonly}/>
+    <input type="text" {name} {placeholder} {required} {value} {readonly} {disabled}/>
 </label>
 
 <style>
