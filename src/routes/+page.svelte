@@ -14,6 +14,9 @@
         <tr>
           <th scope="col">Status</th>
           <th scope="col">Instrument</th>
+          <th scope="col">Merk</th>
+          <th scope="col">Eigendom van</th>
+          <th scope="col">Details</th>
         </tr>
       </thead>
 
@@ -42,36 +45,10 @@
                 </div>
               {/if}
             </td>
-            <td>
-              {item.instrument ?? "onbekend"}
-            </td>
-          </tr>
-        {/each}
-      </tbody>
-    </table>
-
-    <table class="table-desktop">
-      <thead>
-        <tr>
-          <th scope="col">Merk</th>
-          <th scope="col">Eigendom van</th>
-          <th scope="col">Details</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        {#each instruments as item}
-          <tr>
-            <td class="border-none">
-              {item.brand ?? "onbekend"}
-            </td>
-
-            <td>
-              {item.property ?? "onbekend"}
-            </td>
-            <td>
-              <a href="/details/{item.key}">Bekijk</a>
-            </td>
+            <td>{item.instrument ?? "onbekend"}</td>
+            <td>{item.brand ?? "onbekend"}</td>
+            <td>{item.property ?? "onbekend"}</td>
+            <td><a href="/details/{item.key}">Bekijk</a></td>
           </tr>
         {/each}
       </tbody>
@@ -89,19 +66,11 @@
     max-width: 100%;
     container-type: inline-size;
   }
-  .table-desktop {
-    display: none;
-
-    @container (min-width: 768px) {
-      display: table;
-    }
-  }
 
   main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
   }
 
   table {
@@ -116,7 +85,16 @@
       font-family: var(--font-primary);
       text-align: center;
       border: var(--space-3xs) solid var(--primary-lighter);
-      border-radius: var(--space-2xs);
+    }
+    th:nth-of-type(n + 3),
+    td:nth-of-type(n + 3) {
+      display: none;
+    }
+    @container (min-width: 690px) {
+      th:nth-of-type(n + 3),
+      td:nth-of-type(n + 3) {
+        display: table-cell;
+      }
     }
 
     tr {
@@ -163,10 +141,6 @@
       border: 1px solid var(--neutral-mid-grey);
       background-color: var(--neutral-faint-grey);
     }
-  }
-
-  .border-none {
-    border-left: none;
   }
 
   a {
