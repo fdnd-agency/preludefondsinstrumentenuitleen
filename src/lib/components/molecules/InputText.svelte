@@ -4,21 +4,32 @@
 
 <label>
     {label}
+    {#if required}<span>* </span>{/if}
     <input type="text" {name} {placeholder} {required} />
 </label>
 
 <style>
     label {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: min-content 1fr;
         font-weight: var(--font-weight-bold);
         font-size: var(--font-size-body-lg);
+        text-wrap: nowrap;
+
+        &:has(input:user-invalid) span::after {
+            color: var(--caution-neutral);
+            content: " Dit veld is verplicht";
+            font-size: var(--font-size-body-md);
+            line-height: var(--line-height-body);
+            font-weight: var(--font-weight-regular);
+        }
+
         input {
             font-size: var(--font-size-body-lg);
             padding: var(--space-md);
             border: solid var(--space-3xs) var(--primary-neutral);
             border-radius: var(--space-md);
-            
+            grid-column: 1/-1;
             @media (prefers-reduced-motion: no-preference) {
                 transition: ease-in-out 0.3s;
             }

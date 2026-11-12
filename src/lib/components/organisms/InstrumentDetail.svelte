@@ -6,16 +6,20 @@
 <h1>{instrument.name}</h1>
 
 <section>
-  <h2 class={instrument.status.toLowerCase().replace(" ", "-")}>
-    {instrument.status}
+  <h2 class={instrument.status?.toLowerCase().replace(" ", "-") ?? "Onbekend"}>
+    {instrument.status ?? "Onbekend"}
   </h2>
 
   {#if instrument.status === "Uitgeleend"}
     <dl>
       <div>
-        <dt>Uitgeleend tot:</dt>
+        <dt>Uitgeleend sinds:</dt>
         <dd>
-          {instrument.rented_until ?? "Niet bekend"}
+          {new Date(instrument.rented_from).toLocaleDateString("nl-NL", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+          })}
         </dd>
       </div>
       <div>
@@ -42,7 +46,13 @@
   </dl>
 
   <div class="action-buttons">
-    <a href="#" class="button primary">Innemen</a>
+    {#if instrument.status === "Uitgeleend"}
+      <a href="/takeBack/{instrument.key}" class="button primary">Innemen</a>
+    {:else if instrument.status === "Beschikbaar"}
+      <a href="/loanOut/{instrument.key}" class="button primary">Uitlenen</a>
+    {:else}
+      <a href="#" class="button primary" inert>Onbeschikbaar</a>
+    {/if}
     <a href="/damage/{instrument.key}" class="button danger">Schade melden</a>
   </div>
 
