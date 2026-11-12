@@ -23,7 +23,7 @@
       {#each instruments as { key, status, instrument, brand, property } (key)}
         <tr>
           <td><StatusBadge {status} /></td>
-          <td>{instrument ?? "onbekend"}</td>
+          <td><a href="/details/{key}">{instrument ?? "onbekend"}</a></td>
           <td>{brand ?? "onbekend"}</td>
           <td>{property ?? "onbekend"}</td>
           <td><a href="/details/{key}">Bekijk</a></td>
