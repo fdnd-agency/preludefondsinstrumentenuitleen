@@ -1,6 +1,7 @@
 ## Teamafspraken 
 
-- Elke lesdag houden we een korte standup
+- Elke dag houden we een korte standup
+- Elke dag houden we een korte sitdown (Wat heb je die dag af kunnen krijgen)
 - Taken en voortgang houden we bij in het projectboard
 - Iedere taak heeft een duidelijke hoofdverantwoordelijke
 - We starten taken aan de hand van issues
@@ -10,7 +11,9 @@
 - We volgen de FDND code conventies
 - We reviewen elkaars werk voordat het wordt gemerged
 - We ondersteunen elkaar bij onze persoonlijke leerdoelen.
-- Aan het einde van iedere week reflecteren we kort op onze samenwerking 
+- We spreken elkaar aan als het nodig 
+- Aan het einde van iedere week reflecteren we kort op onze samenwerking
+- de scrum leader geeft elke week aan wat aan het eind van de week af moet 
 
 ## Workflow
 We werken vanuit kleine en duidelijke issues (proces en doel moet navolgbaar zijn)
@@ -30,11 +33,14 @@ issue
 Vanuit de main maken wij branches aan voor een korte taak.
 - De naam beschrijft waar je aan werkt, bijvoorbeeld:
 ```
-feature-person-card
-fix-person-image
+feature-overview-table
+fix-instrument-image
 docs-contributing
 ```
 Een branch hoort bij een duidelijk issue en blijft gericht op 1 taak of feature
+
+### Atomic design 
+We werken met een atomic design we hebben 3 mappen waar we de componenten in op delen. Atoms, molecules & organisme.
 
 ### `Commits`
 We volgen de FDND workflowconventies en gebruiken conventional commits.
@@ -48,7 +54,7 @@ type: korte beschrijving #issuenummer
 - `docs:` documentatie
 - `Refactor:` code verbeteren zonder de functionaliteit te veranderen
 - `test:` tests toevoegen of aanpassen
-- `style:`
+- `style: wat toegevoegd of veranderd aan de styling`
   
 > Iedere relevante commit verwijst naar het bijbehorende issue
 
@@ -74,3 +80,20 @@ iedereen benoemt:
 - Waar ben ik mee bezig?
 - Wat is mijn volgende stap?
 - Loop ik ergens op vast?
+
+### Definition of Ready
+Een issue kan opgepakt worden als dit alles erin staat:
+- User story
+- Scope
+- Designs
+- acceptance criteria
+- Features
+- Poker planning
+- MosCow labels
+
+### Definition of Done 
+Een issue kan opgepakt worden als dit alles erin staat:
+- acceptance criteria
+- Test (RAPPE)
+- Review (project board)
+- Pull Request

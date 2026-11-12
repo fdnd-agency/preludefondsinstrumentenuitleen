@@ -2,10 +2,26 @@
   import checkIcon from "$lib/assets/check-circle.svg";
   import notDisturnIcon from "$lib/assets/do_not_disturb_on.svg";
   import alertIcon from "$lib/assets/alert-triangle.svg";
+  import arrowicon from "$lib/assets/arrow.svg";
+
+  import Filters from "$lib/components/organisms/filterInstruments.svelte";
 
   let { data } = $props();
+
+  let selectedStatus = $state("");
+
+  const filteredInstrument = $derived(
+    data.instruments.filter(
+      (instrument) =>
+        selectedStatus === "" || instrument.status === selectedStatus,
+    ),
+  );
   const instruments = $derived(data.instruments);
 </script>
+
+<header>
+  <Filters bind:selectedStatus />
+</header>
 
 <main>
   <div class="table-instrument">
