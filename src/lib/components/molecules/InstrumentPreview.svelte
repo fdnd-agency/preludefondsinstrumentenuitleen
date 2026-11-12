@@ -12,7 +12,7 @@
     />
 
     <p>{related.name}</p>
-    <p class={related.status.toLowerCase().replace(" ", "-")}>
+    <p class={related.status?.toLowerCase().replace(" ", "-") ?? "Onbekend"}>
         {related.status}
     </p>
 </a>

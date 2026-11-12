@@ -1,11 +1,11 @@
 <script>
-    let { name, label, placeholder, required } = $props();
+    let { name, label, placeholder, required, value, readonly } = $props();
 </script>
 
 <label>
     {label}
     {#if required}<span>* </span>{/if}
-    <textarea {name} {placeholder} {required}></textarea>
+    <textarea {name} {placeholder} {required} {value} {readonly}></textarea>
 </label>
 
 <style>
@@ -47,6 +47,9 @@
             }
             &:user-valid {
                 border-color: var(--positive-neutral);
+            }
+            &:read-only {
+                background-color: var(--neutral-light-grey);
             }
         }
     }
