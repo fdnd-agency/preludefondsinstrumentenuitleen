@@ -1,11 +1,11 @@
 <script>
-    let { name, label, placeholder, required } = $props();
+    let { name, label, placeholder, required, value, readonly, disabled } = $props();
 </script>
 
 <label>
     {label}
     {#if required}<span>* </span>{/if}
-    <input type="text" {name} {placeholder} {required} />
+    <input type="text" {name} {placeholder} {required} {value} {readonly} {disabled}/>
 </label>
 
 <style>
@@ -42,6 +42,9 @@
             }
             &:user-valid {
                 border-color: var(--positive-neutral);
+            }
+            &:read-only{
+                background-color: var(--neutral-light-grey);
             }
         }
     }

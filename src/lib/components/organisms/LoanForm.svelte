@@ -1,10 +1,10 @@
 <script>
     import TextInput from "$lib/components/molecules/InputText.svelte";
     import TextArea from "$lib/components/molecules/InputTextArea.svelte";
-    let { instrument } = $props();
+    let { instrument, action } = $props();
 </script>
 
-<form method="post" action="?/loanOut">
+<form method="post" action="?/{action}">
     <input type="hidden" name="id" value={instrument.id} />
     <TextInput
         name="performed_by"
@@ -12,18 +12,23 @@
         placeholder="Naam docent"
         required
     />
+
     <TextInput
         name="involved_party"
         label="Student"
         placeholder="Naam student"
+        value={instrument.student_name}
+        readonly={!!instrument.student_name}
         required
     />
-    <TextArea
-        name="note"
-        label="Notitie"
-        placeholder="Notitie over uitlenen"
-    />
-    <button type="submit" class="primary button">Uitlenen</button>
+
+    <TextArea name="note" label="Notitie" placeholder="Notitie over het lenen" />
+
+    {#if instrument.status === "Uitgeleend"}
+        <button type="submit" class="primary button">Innemen</button>
+    {:else if instrument.status === "Beschikbaar"}
+        <button type="submit" class="primary button">Uitlenen</button>
+    {/if}
 </form>
 
 <style>
