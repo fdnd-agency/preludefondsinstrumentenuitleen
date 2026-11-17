@@ -1,4 +1,5 @@
 import { redirect } from '@sveltejs/kit';
+import { logActivity } from '$lib/server/activity';
 
 export async function load({ fetch, params }) {
     const res = await fetch(
@@ -20,7 +21,7 @@ export const actions = {
         const performedBy = formData.get('performed_by');
         const involvedParty = formData.get('involved_party');
         const note = formData.get('note');
-        
+
         const response = await fetch(
             `https://fdnd-agency.directus.app/items/preludefonds_instruments/${id}`,
             {
@@ -43,33 +44,7 @@ export const actions = {
             }
         }
 
-        await logActivity(id, performedBy, involvedParty, note);
+        await logActivity(id, performedBy, involvedParty, note, "uitlenen");
         redirect(303, `/details/${params.instrumentKey}?success=loaned-out`);
     },
-}
-
-async function logActivity(id, performedBy, involvedParty, note) {
-
-    const response = await fetch(
-        `https://fdnd-agency.directus.app/items/preludefonds_log`,
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                instrument: id,
-                performed_by: performedBy,
-                involved_party: involvedParty,
-                note: note,
-                type_action: "uitlenen"
-            })
-        }
-    )
-    if (!response.ok) {
-        return {
-            success: false,
-            message: "Er is een fout opgetreden"
-        }
-    }
 }
