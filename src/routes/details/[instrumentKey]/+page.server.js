@@ -9,7 +9,7 @@ export async function load({ fetch, params, url }) {
     )
 
     const relatedInstruments = await res2.json();
-
+    console.log(relatedInstruments.data)
     return {
         instrument: data.data[0],
         related: relatedInstruments.data,
