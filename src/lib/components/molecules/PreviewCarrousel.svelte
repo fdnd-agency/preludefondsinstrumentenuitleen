@@ -1,14 +1,27 @@
 <script>
     import Preview from "$lib/components/molecules/InstrumentPreview.svelte";
     let { related } = $props();
+
+    let carousel;
+
+    function scrollCarousel(direction) {
+        carousel.scrollBy({
+            left: direction * carousel.clientWidth,
+            behavior: "smooth",
+        });
+    }
 </script>
 
 <section>
     <h2>Gerelateerde instrumenten</h2>
-    <div>
-        {#each related as item}
-            <Preview {item} />
-        {/each}
+    <div class="wrapper">
+        <button onclick={() => scrollCarousel(-1)}>←</button>
+        <div class="carousel" bind:this={carousel}>
+            {#each related as item}
+                <Preview {item} />
+            {/each}
+        </div>
+        <button onclick={() => scrollCarousel(1)}>→</button>
     </div>
 </section>
 
@@ -16,9 +29,52 @@
     section {
         max-width: clamp(550px, 95%, 1200px);
         margin-inline: auto;
-        div {
-            display: flex;
-            overflow-x: scroll;
+        .wrapper {
+            position: relative;
+
+            button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                display: grid;
+                border-radius: var(--space-xs);
+                background-color: var(--neutral-white);
+                width: 40px;
+                height: 40px;
+                outline: var(--space-3xs) solid var(--neutral-white);
+                font-size: var(--font-size-body-lg);
+                transition: ease-in-out 0.3s;
+                &:first-of-type {
+                    left: var(--space-md);
+                }
+                &:last-of-type {
+                    right: var(--space-md);
+                }
+                &:hover {
+                    cursor: pointer;
+                    background-color: var(--primary-lightest);
+                }
+                &:focus-visible {
+                    border-radius: var(--space-md);
+                    outline: var(--space-3xs) solid var(--primary-neutral);
+                    outline-offset: calc(var(--space-xs) * -1);
+                }
+            }
+
+            .carousel {
+                display: flex;
+                gap: var(--space-md);
+                padding-bottom: var(--space-md);
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                scrollbar-width: none;
+                overscroll-behavior-x: contain;
+                :global(a) {
+                    flex: 0 0 auto;
+                    scroll-snap-align: start;
+                }
+            }
         }
     }
 </style>

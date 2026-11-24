@@ -21,9 +21,8 @@
     a {
         text-decoration: none;
         display: inline-block;
-        margin: var(--space-md);
         border-bottom: var(--space-2xs) solid var(--primary-neutral);
-        min-width: 125px;
+        min-width: 180px;
         transition: 0.3s ease-in-out;
 
         &:hover p:first-of-type {
