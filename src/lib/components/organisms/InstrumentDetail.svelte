@@ -113,6 +113,7 @@
     display: grid;
     margin: 0 var(--space-xs);
     gap: var(--space-2xs) 0;
+    padding-bottom: var(--space-md);
     @media (min-width: 660px) {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 0.25fr 0.3fr 0.3fr 0.5fr 0.25fr 0.5fr 0.25fr;
