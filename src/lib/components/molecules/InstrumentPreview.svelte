@@ -1,19 +1,19 @@
 <script>
     import Picture from "$lib/components/atoms/Picture.svelte";
-    let { related } = $props();
+    let { item } = $props();
 </script>
 
-<a href="/details/{related.key}">
+<a href="/details/{item.key}">
     <Picture
-        src={related.photo}
+        src={item.photo}
         width="200"
         height="200"
-        alt="picture of {related.name}"
+        alt="picture of {item.name}"
     />
 
-    <p>{related.name}</p>
-    <p class={related.status?.toLowerCase().replace(" ", "-") ?? "Onbekend"}>
-        {related.status}
+    <p>{item.name}</p>
+    <p class={item.status?.toLowerCase().replace(" ", "-") ?? "Onbekend"}>
+        {item.status ?? "Onbekend"}
     </p>
 </a>
 
@@ -21,8 +21,8 @@
     a {
         text-decoration: none;
         display: inline-block;
-        margin: var(--space-md);
         border-bottom: var(--space-2xs) solid var(--primary-neutral);
+        min-width: 180px;
         transition: 0.3s ease-in-out;
 
         &:hover p:first-of-type {
@@ -53,7 +53,6 @@
     .in-reparatie {
         color: var(--tertiary-dark);
     }
-
     .beschikbaar {
         color: var(--positive-neutral);
     }

@@ -1,17 +1,17 @@
 <script>
     import Details from "$lib/components/organisms/InstrumentDetail.svelte";
     import ActivityList from "$lib/components/organisms/ActivityList.svelte";
-    import InstrumentPreview from "$lib/components/molecules/InstrumentPreview.svelte"
+    import PreviewCarrousel from "$lib/components/molecules/PreviewCarrousel.svelte";
 
     let { data } = $props();
     let instrument = $derived(data.instrument);
     let log = $derived(data.instrument.log);
-    let related = $derived(data.related[1]);
+    let related = $derived(data.related);
 </script>
 
 <main>
     <Details {instrument} />
-    <InstrumentPreview {related}/>
-   
+    <PreviewCarrousel {related}/>
+
     <ActivityList {log} />
 </main>
