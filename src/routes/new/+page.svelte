@@ -7,7 +7,6 @@
   <h1>Instrument Toevoegen</h1>
 
   <form method="POST" class="instrument-form">
-    <div class="form-velden">
     <TextInput
         name="name"
         label="Naam instrument"
@@ -44,7 +43,6 @@
         placeholder="Eigendom van"
         required
     />
-    </div>
 
     <button type="submit" class="primary button">
       Instrument toevoegen
