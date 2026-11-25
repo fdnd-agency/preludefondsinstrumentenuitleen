@@ -24,7 +24,7 @@ export const actions = {
     const property = get('property');
 
     if (
-      [name, serial_number, brand, property, performed_by].some((value) => !value) ||
+      [name, serial_number, brand, property].some((value) => !value) ||
       !types.includes(type)
     ) {
       error(400, 'Vul alle velden correct in.');
@@ -58,8 +58,6 @@ export const actions = {
       })
     });
 
-    if (!instrumentResponse.ok) error(502, 'Instrument kon niet worden opgeslagen.');
-
-    redirect(303, '/');
+    if (!instrumentResponse.ok) error(502, 'Instrument kon niet worden opgeslagen.');;
   }
 };
