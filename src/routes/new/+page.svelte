@@ -18,7 +18,6 @@
         name="serial_number"
         label="Serienummer"
         placeholder="Serienummer"
-        required
     />
 
       <label>
@@ -34,14 +33,12 @@
         name="brand"
         label="Merk"
         placeholder="Merk"
-        required
     />
 
     <TextInput
         name="property"
         label="Eigendom van"
-        placeholder="Eigendom van"
-        required
+        placeholder="Cool of extern"
     />
 
     <button type="submit" class="primary button">
